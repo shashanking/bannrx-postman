@@ -1,0 +1,1228 @@
+{
+	"info": {
+		"_postman_id": "cc623309-af99-4d26-92c0-95491635c66a",
+		"name": "Bannrx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10551797"
+	},
+	"item": [
+		{
+			"name": "BDA User API",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Rita Agrawal\",\n    \"phoneNo\": \"9425041102\",\n    \"email\": \"rita@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_SCREEN_HANDLER\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/bda/add",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"bda",
+								"add"
+							]
+						},
+						"description": "This API to be used by BDA to create an user with appropriate details.\n\nWIP\n\n- validation on the bankDetails duplicate\n    \n- validation on verificationId of bankDetails"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Someone Sharma\",\n    \"phoneNo\": \"9425040601\",\n    \"email\": \"sharma@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_BDA\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"line 1\",\n        \"state\": \"Odisha\",\n        \"city\": \"Bhawanipatna\",\n        \"pincode\": \"766001\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250001,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"FOOD_AND_BEVERAGE\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8801/v1/api/user/bda/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8801",
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 07:50:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User 9425040601 signed up successfully\",\n    \"responseBody\": {\n        \"id\": \"UR20250412I1f3oH2J3s\",\n        \"name\": \"Someone Sharma\",\n        \"phoneNo\": \"9425040601\",\n        \"email\": \"sharma@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD20250412yhlB2S7Gwk\",\n                \"addressLine1\": \"line 1\",\n                \"addressLine2\": null,\n                \"city\": \"Bhawanipatna\",\n                \"state\": \"Odisha\",\n                \"pincode\": \"766001\",\n                \"latitude\": 1,\n                \"longitude\": 1\n            }\n        ],\n        \"bankDetailsDtoSet\": [\n            {\n                \"id\": \"BD20250412L7F2cGDzts\",\n                \"accountNo\": 202503250001,\n                \"ifscCode\": \"ICIC0000269\",\n                \"verified\": true,\n                \"verificationProcessId\": \"id1\"\n            }\n        ],\n        \"businessDto\": {\n            \"id\": \"BU20250412YBOv6uiXLm\",\n            \"name\": \"SomeBusinessName\",\n            \"type\": \"FOOD_AND_BEVERAGE\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List User API",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/bda/user?sortDirection=DESC&phoneNo=94250412",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"bda",
+								"user"
+							],
+							"query": [
+								{
+									"key": "sortDirection",
+									"value": "DESC"
+								},
+								{
+									"key": "phoneNo",
+									"value": "94250412"
+								}
+							]
+						},
+						"description": "This API is used to list users. Functionalities\n\n- Can search by\n    \n    - partial phone no\n        \n    - full email id\n        \n    - partial name\n        \n\n**Note:** The output list excludes the user requesting.\n\nWIP\n\n- role base access. Only Admin or bda users should have access to this API"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/bda/user",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"user"
+									],
+									"query": [
+										{
+											"key": "sortDirection",
+											"value": "DESC",
+											"disabled": true
+										},
+										{
+											"key": "phoneNo",
+											"value": "94250",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 11:17:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User List\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"DESC\",\n        \"content\": [\n            {\n                \"id\": \"UR20250412sP10e60QHX\",\n                \"name\": \"Manoj Chawda\",\n                \"phoneNo\": \"9425041202\",\n                \"email\": \"chawda@gmail.com\",\n                \"addressDtoSet\": [\n                    {\n                        \"id\": \"AD20250412mxwtoJ54Gh\",\n                        \"addressLine1\": \"juhu\",\n                        \"addressLine2\": null,\n                        \"city\": \"Mumbai\",\n                        \"state\": \"Maharastra\",\n                        \"pincode\": \"400021\",\n                        \"latitude\": 1,\n                        \"longitude\": 1\n                    }\n                ],\n                \"bankDetailsDtoSet\": [\n                    {\n                        \"id\": \"BD20250412Ejp6QxIlNb\",\n                        \"accountNo\": 202503250003,\n                        \"ifscCode\": \"ICIC0000269\",\n                        \"verified\": true,\n                        \"verificationProcessId\": \"id1\"\n                    }\n                ],\n                \"businessDto\": {\n                    \"id\": \"BU20250412UU0h8GgJNk\",\n                    \"name\": \"SomeBusinessName\",\n                    \"type\": \"ELECTRONICS_AND_REPAIR_SHOPS\"\n                }\n            },\n            {\n                \"id\": \"UR20250412tFe9bqzkIY\",\n                \"name\": \"Meenakshi Chaudry\",\n                \"phoneNo\": \"9425041201\",\n                \"email\": \"meenakshi@gmail.com\",\n                \"addressDtoSet\": [\n                    {\n                        \"id\": \"AD20250412NONRvNwxxx\",\n                        \"addressLine1\": \"line 1\",\n                        \"addressLine2\": null,\n                        \"city\": \"Mumbai\",\n                        \"state\": \"Maharastra\",\n                        \"pincode\": \"400021\",\n                        \"latitude\": 1,\n                        \"longitude\": 1\n                    }\n                ],\n                \"bankDetailsDtoSet\": [\n                    {\n                        \"id\": \"BD20250412h4k0FNFZD4\",\n                        \"accountNo\": 202503250002,\n                        \"ifscCode\": \"ICIC0000269\",\n                        \"verified\": true,\n                        \"verificationProcessId\": \"id1\"\n                    }\n                ],\n                \"businessDto\": {\n                    \"id\": \"BU20250412QMuhDtBdUK\",\n                    \"name\": \"SomeBusinessName\",\n                    \"type\": \"FASHION_AND_ACCESSORIES\"\n                }\n            }\n        ],\n        \"count\": 2\n    }\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/bda/user?sortDirection=DESC&phoneNo=94250412",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"user"
+									],
+									"query": [
+										{
+											"key": "sortDirection",
+											"value": "DESC"
+										},
+										{
+											"key": "phoneNo",
+											"value": "94250412"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 11:44:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User List\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"DESC\",\n        \"content\": [\n            {\n                \"id\": \"UR20250412sP10e60QHX\",\n                \"name\": \"Manoj Chawda\",\n                \"phoneNo\": \"9425041202\",\n                \"email\": \"chawda@gmail.com\",\n                \"addressDtoSet\": [\n                    {\n                        \"id\": \"AD20250412mxwtoJ54Gh\",\n                        \"addressLine1\": \"juhu\",\n                        \"addressLine2\": null,\n                        \"city\": \"Mumbai\",\n                        \"state\": \"Maharastra\",\n                        \"pincode\": \"400021\",\n                        \"latitude\": 1,\n                        \"longitude\": 1\n                    }\n                ],\n                \"bankDetailsDtoSet\": [\n                    {\n                        \"id\": \"BD20250412Ejp6QxIlNb\",\n                        \"accountNo\": 202503250003,\n                        \"ifscCode\": \"ICIC0000269\",\n                        \"verified\": true,\n                        \"verificationProcessId\": \"id1\"\n                    }\n                ],\n                \"businessDto\": {\n                    \"id\": \"BU20250412UU0h8GgJNk\",\n                    \"name\": \"SomeBusinessName\",\n                    \"type\": \"ELECTRONICS_AND_REPAIR_SHOPS\"\n                }\n            },\n            {\n                \"id\": \"UR20250412tFe9bqzkIY\",\n                \"name\": \"Meenakshi Chaudry\",\n                \"phoneNo\": \"9425041201\",\n                \"email\": \"meenakshi@gmail.com\",\n                \"addressDtoSet\": [\n                    {\n                        \"id\": \"AD20250412NONRvNwxxx\",\n                        \"addressLine1\": \"line 1\",\n                        \"addressLine2\": null,\n                        \"city\": \"Mumbai\",\n                        \"state\": \"Maharastra\",\n                        \"pincode\": \"400021\",\n                        \"latitude\": 1,\n                        \"longitude\": 1\n                    }\n                ],\n                \"bankDetailsDtoSet\": [\n                    {\n                        \"id\": \"BD20250412h4k0FNFZD4\",\n                        \"accountNo\": 202503250002,\n                        \"ifscCode\": \"ICIC0000269\",\n                        \"verified\": true,\n                        \"verificationProcessId\": \"id1\"\n                    }\n                ],\n                \"businessDto\": {\n                    \"id\": \"BU20250412QMuhDtBdUK\",\n                    \"name\": \"SomeBusinessName\",\n                    \"type\": \"FASHION_AND_ACCESSORIES\"\n                }\n            }\n        ],\n        \"count\": 2\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User APIs",
+			"item": [
+				{
+					"name": "Login API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"9425040601\",\n    \"password\": \"bannrx123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/login",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"login"
+							]
+						},
+						"description": "This API is used to get auth token to be used in subsequent API calls."
+					},
+					"response": [
+						{
+							"name": "Mandatory Missing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/login",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 08:15:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"password\": \"Password is mandatory.\",\n        \"username\": \"Username is mandatory.\"\n    }\n}"
+						},
+						{
+							"name": "Invalid Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"9425040601\",\n    \"password\": \"bannrx1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/login",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 08:16:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"errorMessage\": \"Invalid Password\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"9425040601\",\n    \"password\": \"bannrx123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/login",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 08:17:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseBody\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDEySTFmM29IMkozcyIsImlhdCI6MTc0NDQ0NTg1OCwiZXhwIjoxNzc1OTgwMTk1fQ.nVsEJld807t3Cr2QPORHbT1Bf11aP5K1yP2e6o9pB90\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateUserDetails API",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"password\": \"ritik1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/update",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"update"
+							]
+						},
+						"description": "This API is used to update the below details\n\n- name\n- phone no\n- email\n- password\n    \n\n**Note:** The purpose of the API is to update details if provided. So, if the details are same as earlier than the same will be thrown as an exception. This is not true for password update."
+					},
+					"response": [
+						{
+							"name": "Error: No Changes",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 09:21:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"No changes found.\"\n}"
+						},
+						{
+							"name": "Success: Name udpated",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ritik Agrawal\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 09:24:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User is updated successfully\",\n    \"responseBody\": {\n        \"id\": \"UR20250412I1f3oH2J3s\",\n        \"name\": \"Ritik Agrawal\",\n        \"phoneNo\": \"9425040601\",\n        \"email\": \"sharma@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD20250412yhlB2S7Gwk\",\n                \"addressLine1\": \"line 1\",\n                \"addressLine2\": null,\n                \"city\": \"Bhawanipatna\",\n                \"state\": \"Odisha\",\n                \"pincode\": \"766001\",\n                \"latitude\": 1,\n                \"longitude\": 1\n            }\n        ],\n        \"bankDetailsDtoSet\": [\n            {\n                \"id\": \"BD20250412L7F2cGDzts\",\n                \"accountNo\": 202503250001,\n                \"ifscCode\": \"ICIC0000269\",\n                \"verified\": true,\n                \"verificationProcessId\": \"id1\"\n            }\n        ],\n        \"businessDto\": {\n            \"id\": \"BU20250412YBOv6uiXLm\",\n            \"name\": \"SomeBusinessName\",\n            \"type\": \"FOOD_AND_BEVERAGE\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Error: Same Phone No",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"phoneNo\": \"9425040601\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 09:26:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Phone no didn't changed. Please provide updated details only.\"\n}"
+						},
+						{
+							"name": "Error: Invalid phone No",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"phoneNo\": \"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 09:28:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"phoneNo: Phone no must be 10 digits.\"\n}"
+						},
+						{
+							"name": "Success: update password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"password\": \"ritik1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Apr 2025 09:35:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User is updated successfully\",\n    \"responseBody\": {\n        \"id\": \"UR20250412I1f3oH2J3s\",\n        \"name\": \"Ritik Agrawal\",\n        \"phoneNo\": \"9425040602\",\n        \"email\": \"sharma@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD20250412yhlB2S7Gwk\",\n                \"addressLine1\": \"line 1\",\n                \"addressLine2\": null,\n                \"city\": \"Bhawanipatna\",\n                \"state\": \"Odisha\",\n                \"pincode\": \"766001\",\n                \"latitude\": 1,\n                \"longitude\": 1\n            }\n        ],\n        \"bankDetailsDtoSet\": [\n            {\n                \"id\": \"BD20250412L7F2cGDzts\",\n                \"accountNo\": 202503250001,\n                \"ifscCode\": \"ICIC0000269\",\n                \"verified\": true,\n                \"verificationProcessId\": \"id1\"\n            }\n        ],\n        \"businessDto\": {\n            \"id\": \"BU20250412YBOv6uiXLm\",\n            \"name\": \"SomeBusinessName\",\n            \"type\": \"FOOD_AND_BEVERAGE\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "API that users can user."
+		}
+	],
+	"variable": [
+		{
+			"key": "local-common-ms",
+			"value": "http://localhost:8801"
+		}
+	]
+}
