@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "cc623309-af99-4d26-92c0-95491635c66a",
+		"_postman_id": "873db240-d342-41d6-8988-11a81028ce93",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10551797"
+		"_exporter_id": "31364017",
+		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-873db240-d342-41d6-8988-11a81028ce93?action=share&source=collection_link&creator=31364017"
 	},
 	"item": [
 		{
@@ -11,6 +12,20 @@
 			"item": [
 				{
 					"name": "add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Stores the createdUserId in an environment or global variable\r",
+									"var createdUserId = responseBody.responseBody.id;\r",
+									"pm.globals.set(\"createdUserId\", createdUserId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -22,16 +37,22 @@
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Rita Agrawal\",\n    \"phoneNo\": \"9425041102\",\n    \"email\": \"rita@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_SCREEN_HANDLER\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/newProject/bdaDto.xlsx"
+								},
+								{
+									"key": "sheetNo",
+									"value": "0",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "{{local-common-ms}}/v1/api/user/bda/add",
+							"raw": "{{local-common-ms}}/v1/api/user/bda/add?",
 							"host": [
 								"{{local-common-ms}}"
 							],
@@ -41,35 +62,39 @@
 								"user",
 								"bda",
 								"add"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
 							]
 						},
-						"description": "This API to be used by BDA to create an user with appropriate details.\n\nWIP\n\n- validation on the bankDetails duplicate\n    \n- validation on verificationId of bankDetails"
+						"description": "### Add User Data\n\nThis API endpoint is used to add a user by a BDA (Business Development Associate) with appropriate details. The request should be sent as an HTTP POST to `{{local-common-ms}}/v1/api/user/bda/add`.\n\n#### Request Body\n\n- form-data\n    \n    - `file`: (file) - The file to be uploaded.\n        \n    - `sheetNo`: (text) - The sheet number.\n        \n\n#### Response\n\n- Status: 200\n    \n- Content-Type: application/json\n    \n\nExample response body:\n\n``` json\n{\n    \"statusCode\": 0,\n    \"message\": \"\",\n    \"responseBody\": {\n        \"createdUserId\": [\"\"],\n        \"bdaUserExcelDtoList\": null,\n        \"invalidExcelRecordDtoList\": [\n            {\n                \"row\": 0,\n                \"col\": 0,\n                \"errorMessage\": \"\"\n            }\n        ]\n    }\n}\n\n ```\n\nThe `createdUserId` field in the response indicates the user ID of the newly created user.\n\n#### Additional Notes\n\n- Validation is performed on the bankDetails to prevent duplicates.\n    \n- Validation is performed on the verificationId of bankDetails.\n    \n\nWIP\n\n- validation on the bankDetails duplicate\n    \n- validation on verificationId of bankDetails"
 					},
 					"response": [
 						{
-							"name": "Success",
+							"name": "success",
 							"originalRequest": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
-										"type": "text",
-										"disabled": true
-									}
-								],
+								"header": [],
 								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"name\": \"Someone Sharma\",\n    \"phoneNo\": \"9425040601\",\n    \"email\": \"sharma@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_BDA\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"line 1\",\n        \"state\": \"Odisha\",\n        \"city\": \"Bhawanipatna\",\n        \"pincode\": \"766001\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250001,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"FOOD_AND_BEVERAGE\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/newProject/bdaDto.xlsx"
+										},
+										{
+											"key": "fileNo",
+											"value": "0",
+											"type": "text"
 										}
-									}
+									]
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/bda/add",
-									"protocol": "http",
+									"raw": "localhost:8801/v1/api/user/bda/add?file",
 									"host": [
 										"localhost"
 									],
@@ -80,6 +105,12 @@
 										"user",
 										"bda",
 										"add"
+									],
+									"query": [
+										{
+											"key": "file",
+											"value": null
+										}
 									]
 								}
 							},
@@ -133,7 +164,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 12 Apr 2025 07:50:28 GMT"
+									"value": "Sun, 13 Apr 2025 04:24:44 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -145,7 +176,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User 9425040601 signed up successfully\",\n    \"responseBody\": {\n        \"id\": \"UR20250412I1f3oH2J3s\",\n        \"name\": \"Someone Sharma\",\n        \"phoneNo\": \"9425040601\",\n        \"email\": \"sharma@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD20250412yhlB2S7Gwk\",\n                \"addressLine1\": \"line 1\",\n                \"addressLine2\": null,\n                \"city\": \"Bhawanipatna\",\n                \"state\": \"Odisha\",\n                \"pincode\": \"766001\",\n                \"latitude\": 1,\n                \"longitude\": 1\n            }\n        ],\n        \"bankDetailsDtoSet\": [\n            {\n                \"id\": \"BD20250412L7F2cGDzts\",\n                \"accountNo\": 202503250001,\n                \"ifscCode\": \"ICIC0000269\",\n                \"verified\": true,\n                \"verificationProcessId\": \"id1\"\n            }\n        ],\n        \"businessDto\": {\n            \"id\": \"BU20250412YBOv6uiXLm\",\n            \"name\": \"SomeBusinessName\",\n            \"type\": \"FOOD_AND_BEVERAGE\"\n        }\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"BDA User %s signed up successfully\",\n    \"responseBody\": {\n        \"createdUserId\": [\n            \"UR20250413HMaeH5OHB9\",\n            \"UR20250413HLoOBHXEKt\",\n            \"UR20250413CBzPs3Au88\",\n            \"UR20250413Z3SFt0iRDT\",\n            \"UR20250413fMqQg6b8pR\"\n        ],\n        \"bdaUserExcelDtoList\": null,\n        \"invalidExcelRecordDtoList\": [\n            {\n                \"row\": 6,\n                \"col\": 8,\n                \"errorMessage\": \"ifsc code should not be empty\"\n            },\n            {\n                \"row\": 8,\n                \"col\": 7,\n                \"errorMessage\": \"account no should not be empty\"\n            },\n            {\n                \"row\": 9,\n                \"col\": 3,\n                \"errorMessage\": \"AddressLine1 should not be empty\"\n            },\n            {\n                \"row\": 10,\n                \"col\": 6,\n                \"errorMessage\": \"pincode should not be empty\"\n            },\n            {\n                \"row\": 11,\n                \"col\": 4,\n                \"errorMessage\": \"city should not be empty\"\n            },\n            {\n                \"row\": 12,\n                \"col\": 0,\n                \"errorMessage\": \"name should not be empty\"\n            },\n            {\n                \"row\": 12,\n                \"col\": 1,\n                \"errorMessage\": \"phone no should not be empty\"\n            },\n            {\n                \"row\": 12,\n                \"col\": 2,\n                \"errorMessage\": \"Email should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 0,\n                \"errorMessage\": \"name should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 1,\n                \"errorMessage\": \"phone no should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 4,\n                \"errorMessage\": \"city should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 5,\n                \"errorMessage\": \"state should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 6,\n                \"errorMessage\": \"pincode should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 7,\n                \"errorMessage\": \"account no should not be empty\"\n            },\n            {\n                \"row\": 13,\n                \"col\": 8,\n                \"errorMessage\": \"ifsc code should not be empty\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
