@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cc623309-af99-4d26-92c0-95491635c66a",
+		"_postman_id": "854207fb-9944-4993-84cc-82b6425559ce",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "10551797"
@@ -23,7 +23,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Rita Agrawal\",\n    \"phoneNo\": \"9425041102\",\n    \"email\": \"rita@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_SCREEN_HANDLER\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
+							"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"phoneNo\": \"9425041102\",\n    \"email\": \"rita@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_SCREEN_HANDLER\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 								"add"
 							]
 						},
-						"description": "This API to be used by BDA to create an user with appropriate details.\n\nWIP\n\n- validation on the bankDetails duplicate\n    \n- validation on verificationId of bankDetails"
+						"description": "This API to be used by BDA to create an user with appropriate details.\n\nPossible vlaues\n\n- role: ROLE_SCREEN_HANDLER, ROLE_CAMPAIGNER, ROLE_BDA, ROLE_ADMIN\n    \n\nWIP\n\n- validation on the bankDetails duplicate\n- validation on verificationId of bankDetails"
 					},
 					"response": [
 						{
@@ -146,6 +146,105 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User 9425040601 signed up successfully\",\n    \"responseBody\": {\n        \"id\": \"UR20250412I1f3oH2J3s\",\n        \"name\": \"Someone Sharma\",\n        \"phoneNo\": \"9425040601\",\n        \"email\": \"sharma@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD20250412yhlB2S7Gwk\",\n                \"addressLine1\": \"line 1\",\n                \"addressLine2\": null,\n                \"city\": \"Bhawanipatna\",\n                \"state\": \"Odisha\",\n                \"pincode\": \"766001\",\n                \"latitude\": 1,\n                \"longitude\": 1\n            }\n        ],\n        \"bankDetailsDtoSet\": [\n            {\n                \"id\": \"BD20250412L7F2cGDzts\",\n                \"accountNo\": 202503250001,\n                \"ifscCode\": \"ICIC0000269\",\n                \"verified\": true,\n                \"verificationProcessId\": \"id1\"\n            }\n        ],\n        \"businessDto\": {\n            \"id\": \"BU20250412YBOv6uiXLm\",\n            \"name\": \"SomeBusinessName\",\n            \"type\": \"FOOD_AND_BEVERAGE\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Error: already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"phoneNo\": \"9425041102\",\n    \"email\": \"rita@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_SCREEN_HANDLER\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/bda/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 05:22:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"User already exists.\"\n}"
 						}
 					]
 				},
@@ -385,6 +484,152 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User List\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"DESC\",\n        \"content\": [\n            {\n                \"id\": \"UR20250412sP10e60QHX\",\n                \"name\": \"Manoj Chawda\",\n                \"phoneNo\": \"9425041202\",\n                \"email\": \"chawda@gmail.com\",\n                \"addressDtoSet\": [\n                    {\n                        \"id\": \"AD20250412mxwtoJ54Gh\",\n                        \"addressLine1\": \"juhu\",\n                        \"addressLine2\": null,\n                        \"city\": \"Mumbai\",\n                        \"state\": \"Maharastra\",\n                        \"pincode\": \"400021\",\n                        \"latitude\": 1,\n                        \"longitude\": 1\n                    }\n                ],\n                \"bankDetailsDtoSet\": [\n                    {\n                        \"id\": \"BD20250412Ejp6QxIlNb\",\n                        \"accountNo\": 202503250003,\n                        \"ifscCode\": \"ICIC0000269\",\n                        \"verified\": true,\n                        \"verificationProcessId\": \"id1\"\n                    }\n                ],\n                \"businessDto\": {\n                    \"id\": \"BU20250412UU0h8GgJNk\",\n                    \"name\": \"SomeBusinessName\",\n                    \"type\": \"ELECTRONICS_AND_REPAIR_SHOPS\"\n                }\n            },\n            {\n                \"id\": \"UR20250412tFe9bqzkIY\",\n                \"name\": \"Meenakshi Chaudry\",\n                \"phoneNo\": \"9425041201\",\n                \"email\": \"meenakshi@gmail.com\",\n                \"addressDtoSet\": [\n                    {\n                        \"id\": \"AD20250412NONRvNwxxx\",\n                        \"addressLine1\": \"line 1\",\n                        \"addressLine2\": null,\n                        \"city\": \"Mumbai\",\n                        \"state\": \"Maharastra\",\n                        \"pincode\": \"400021\",\n                        \"latitude\": 1,\n                        \"longitude\": 1\n                    }\n                ],\n                \"bankDetailsDtoSet\": [\n                    {\n                        \"id\": \"BD20250412h4k0FNFZD4\",\n                        \"accountNo\": 202503250002,\n                        \"ifscCode\": \"ICIC0000269\",\n                        \"verified\": true,\n                        \"verificationProcessId\": \"id1\"\n                    }\n                ],\n                \"businessDto\": {\n                    \"id\": \"BU20250412QMuhDtBdUK\",\n                    \"name\": \"SomeBusinessName\",\n                    \"type\": \"FASHION_AND_ACCESSORIES\"\n                }\n            }\n        ],\n        \"count\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create from excel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDEySTFmM29IMkozcyIsImlhdCI6MTc0NDQ0NTg1OCwiZXhwIjoxNzc1OTgwMTk1fQ.nVsEJld807t3Cr2QPORHbT1Bf11aP5K1yP2e6o9pB90"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/ritik-agrawal/Downloads/Untitled spreadsheet.xlsx"
+								},
+								{
+									"key": "sheetNo",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/bda/create",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"bda",
+								"create"
+							]
+						},
+						"description": "This API is used to create BDA User from provided excel sheet\n\nWIP\n\n- cell level validations on phone email or other regex\n- Phone no is not getting saved properly\n    \n\n**This API is still being fine tuned and is advised not to be used.**"
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDEySTFmM29IMkozcyIsImlhdCI6MTc0NDQ0NTg1OCwiZXhwIjoxNzc1OTgwMTk1fQ.nVsEJld807t3Cr2QPORHbT1Bf11aP5K1yP2e6o9pB90"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/ritik-agrawal/Downloads/Untitled spreadsheet.xlsx"
+										},
+										{
+											"key": "sheetNo",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/bda/create",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Apr 2025 07:48:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"BDA User %s signed up successfully\",\n    \"responseBody\": {\n        \"userIds\": [\n            \"UR20250413fdrtkARqR2\",\n            \"UR20250413fXUR246spL\",\n            \"UR2025041368BfQs3rlK\",\n            \"UR20250413G2cLWnDWZX\",\n            \"UR20250413SFdm07alcj\"\n        ],\n        \"errorCases\": [\n            \"[13,6] :: pincode should not be empty\",\n            \"[6,8] :: ifsc code should not be empty\",\n            \"[8,7] :: account no should not be empty\",\n            \"[13,7] :: account no should not be empty\",\n            \"[12,2] :: Email should not be empty\",\n            \"[12,0] :: name should not be empty\",\n            \"[12,1] :: phone no should not be empty\",\n            \"[13,1] :: phone no should not be empty\",\n            \"[9,3] :: AddressLine1 should not be empty\",\n            \"[13,0] :: name should not be empty\",\n            \"[13,5] :: state should not be empty\",\n            \"[11,4] :: city should not be empty\",\n            \"[13,8] :: ifsc code should not be empty\",\n            \"[10,6] :: pincode should not be empty\",\n            \"[13,4] :: city should not be empty\"\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -706,7 +951,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"password\": \"ritik1234\"\n}",
+							"raw": "{\n    \"password\": \"manoj123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -714,7 +959,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{local-common-ms}}/v1/api/user/update",
+							"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 							"host": [
 								"{{local-common-ms}}"
 							],
@@ -722,7 +967,8 @@
 								"v1",
 								"api",
 								"user",
-								"update"
+								"update",
+								"basic-details"
 							]
 						},
 						"description": "This API is used to update the below details\n\n- name\n- phone no\n- email\n- password\n    \n\n**Note:** The purpose of the API is to update details if provided. So, if the details are same as earlier than the same will be thrown as an exception. This is not true for password update."
@@ -749,7 +995,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -757,7 +1003,8 @@
 										"v1",
 										"api",
 										"user",
-										"update"
+										"update",
+										"basic-details"
 									]
 								}
 							},
@@ -846,7 +1093,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -854,7 +1101,8 @@
 										"v1",
 										"api",
 										"user",
-										"update"
+										"update",
+										"basic-details"
 									]
 								}
 							},
@@ -943,7 +1191,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -951,7 +1199,8 @@
 										"v1",
 										"api",
 										"user",
-										"update"
+										"update",
+										"basic-details"
 									]
 								}
 							},
@@ -1040,7 +1289,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -1048,7 +1297,8 @@
 										"v1",
 										"api",
 										"user",
-										"update"
+										"update",
+										"basic-details"
 									]
 								}
 							},
@@ -1137,7 +1387,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update",
+									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -1145,7 +1395,8 @@
 										"v1",
 										"api",
 										"user",
-										"update"
+										"update",
+										"basic-details"
 									]
 								}
 							},
@@ -1214,9 +1465,956 @@
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User is updated successfully\",\n    \"responseBody\": {\n        \"id\": \"UR20250412I1f3oH2J3s\",\n        \"name\": \"Ritik Agrawal\",\n        \"phoneNo\": \"9425040602\",\n        \"email\": \"sharma@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD20250412yhlB2S7Gwk\",\n                \"addressLine1\": \"line 1\",\n                \"addressLine2\": null,\n                \"city\": \"Bhawanipatna\",\n                \"state\": \"Odisha\",\n                \"pincode\": \"766001\",\n                \"latitude\": 1,\n                \"longitude\": 1\n            }\n        ],\n        \"bankDetailsDtoSet\": [\n            {\n                \"id\": \"BD20250412L7F2cGDzts\",\n                \"accountNo\": 202503250001,\n                \"ifscCode\": \"ICIC0000269\",\n                \"verified\": true,\n                \"verificationProcessId\": \"id1\"\n            }\n        ],\n        \"businessDto\": {\n            \"id\": \"BU20250412YBOv6uiXLm\",\n            \"name\": \"SomeBusinessName\",\n            \"type\": \"FOOD_AND_BEVERAGE\"\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "UpdateBankDetailsApi",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"process\": \"MANUAL\",\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250004\",\n    \"ifscCode\": \"ICIC0000268\",\n    \"verified\": true,\n    \"verificationProcessId\": \"VA20250419yiEjHgwDl1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"update",
+								"bank-details"
+							]
+						},
+						"description": "This API is used by logged in user to update it's bank details."
+					},
+					"response": [
+						{
+							"name": "Error: Mandatory Details missing",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update",
+										"bank-details"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:19:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"accountNo\": \"Account number cannot be null\",\n        \"verified\": \"Verified status cannot be null\",\n        \"ifscCode\": \"IFSC code cannot be blank\"\n    }\n}"
+						},
+						{
+							"name": "Error: Bank Details Exists",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"process\": null,\n    \"id\": \"BD202504194ERDuk0sjH\",\n    \"accountNo\": \"202503250003\",\n    \"ifscCode\": \"ICIC0000269\",\n    \"verified\": true,\n    \"verificationProcessId\": \"id1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update",
+										"bank-details"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:21:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Bank details already exists.\"\n}"
+						},
+						{
+							"name": "Error: Verification Id mandatory",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"BD202504194ERDuk0sjH\",\n    \"accountNo\": \"202503250003\",\n    \"ifscCode\": \"ICIC0000260\",\n    \"verified\": true,\n    \"verificationProcessId\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update",
+										"bank-details"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:23:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"verificationProcessId\": \"Verification process ID cannot be blank\"\n    }\n}"
+						},
+						{
+							"name": "Error: User trying to update others bank details",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"process\": \"MANUAL\",\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250004\",\n    \"ifscCode\": \"ICIC0000268\",\n    \"verified\": true,\n    \"verificationProcessId\": \"VA20250419yiEjHgwDl1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update",
+										"bank-details"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:39:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Bank Details are associated to other user.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"process\": \"MANUAL\",\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250004\",\n    \"ifscCode\": \"ICIC0000268\",\n    \"verified\": true,\n    \"verificationProcessId\": \"VA20250419yiEjHgwDl1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update",
+										"bank-details"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:41:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Bank Details updated Successfully.\",\n    \"responseBody\": {\n        \"process\": null,\n        \"id\": \"BD20250419bWQdS7NnDq\",\n        \"accountNo\": \"202503250004\",\n        \"ifscCode\": \"ICIC0000268\",\n        \"verified\": true,\n        \"verificationProcessId\": \"VA20250419yiEjHgwDl1\"\n    }\n}"
+						},
+						{
+							"name": "Error: Trying to save verified false bank details",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250003\",\n    \"ifscCode\": \"ICIC0000270\",\n    \"verified\": false,\n    \"verificationProcessId\": \"VA20250419mnhsqtBlZb\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"update",
+										"bank-details"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:47:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Bank detail are not verified.\"\n}"
+						}
+					]
 				}
 			],
 			"description": "API that users can user."
+		},
+		{
+			"name": "Verification APIs",
+			"item": [
+				{
+					"name": "BankDetailsVerificationAPI",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250003\",\n    \"ifscCode\": \"ICIC0000269\",\n    \"verified\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/verify/bank-details",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"verify",
+								"bank-details"
+							]
+						},
+						"description": "This API is used to mark an bank details as verified by the logged in user. Now, the logged in user can be of any role. The verificationId generated here should be used in the add or update bank details API\n\n**WIP**\n\n- This API should be accessible to BDA user. This will be picked up once the Role based access ticket is picked up"
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"accountNo\": 20250418001,\n        \"verified\": true,\n        \"ifscCode\": \"SBIN0000039\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/verify/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"verify",
+										"bank-details"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Apr 2025 08:34:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseBody\": {\n        \"id\": \"VA20250418CsFRCXBhJa\",\n        \"verificationData\": {\n            \"process\": \"MANUAL\",\n            \"id\": null,\n            \"accountNo\": 20250418001,\n            \"ifscCode\": \"SBIN0000039\",\n            \"verified\": true,\n            \"verificationProcessId\": null\n        },\n        \"purpose\": \"BANK_DETAILS\",\n        \"verified\": true\n    }\n}"
+						},
+						{
+							"name": "Error: Mandatory details missing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/verify/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"verify",
+										"bank-details"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:44:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"accountNo\": \"Account number cannot be null\",\n        \"verified\": \"Verified status cannot be null\",\n        \"ifscCode\": \"IFSC code cannot be blank\"\n    }\n}"
+						},
+						{
+							"name": "Success: verified false",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250003\",\n    \"ifscCode\": \"ICIC0000269\",\n    \"verified\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/verify/bank-details",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"verify",
+										"bank-details"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 19 Apr 2025 07:45:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"responseBody\": {\n        \"id\": \"VA20250419mnhsqtBlZb\",\n        \"verificationData\": {\n            \"process\": \"MANUAL\",\n            \"id\": \"BD20250419bWQdS7NnDq\",\n            \"accountNo\": \"202503250003\",\n            \"ifscCode\": \"ICIC0000269\",\n            \"verified\": false,\n            \"verificationProcessId\": null\n        },\n        \"purpose\": \"BANK_DETAILS\",\n        \"verified\": false\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"variable": [
