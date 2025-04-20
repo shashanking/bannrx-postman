@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "854207fb-9944-4993-84cc-82b6425559ce",
+		"_postman_id": "b2dd2bf8-722d-474b-b1d4-88dffb6d2df0",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10551797"
+		"_exporter_id": "31364017",
+		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-b2dd2bf8-722d-474b-b1d4-88dffb6d2df0?action=share&source=collection_link&creator=31364017"
 	},
 	"item": [
 		{
@@ -17,13 +18,12 @@
 							{
 								"key": "Authorization",
 								"value": "Bearer {{current-token}}",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Ritik Agrawal\",\n    \"phoneNo\": \"9425041102\",\n    \"email\": \"rita@gmail.com\",\n    \"password\": \"bannrx123\",\n    \"role\": \"ROLE_SCREEN_HANDLER\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
+							"raw": "{\n    \"name\": \"Saurav Jha\",\n    \"phoneNo\": \"9425041103\",\n    \"email\": \"saurav@gmail.com\",\n    \"password\": \"bannrx1234\",\n    \"role\": \"ROLE_BDA\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -43,7 +43,7 @@
 								"add"
 							]
 						},
-						"description": "This API to be used by BDA to create an user with appropriate details.\n\nPossible vlaues\n\n- role: ROLE_SCREEN_HANDLER, ROLE_CAMPAIGNER, ROLE_BDA, ROLE_ADMIN\n    \n\nWIP\n\n- validation on the bankDetails duplicate\n- validation on verificationId of bankDetails"
+						"description": "This API to be used by BDA to create an user with appropriate details.\n\nPossible vlaues\n\n- role: ROLE_SCREEN_HANDLER, ROLE_CAMPAIGNER, ROLE_BDA, ROLE_ADMIN"
 					},
 					"response": [
 						{
@@ -245,6 +245,104 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"User already exists.\"\n}"
+						},
+						{
+							"name": "Bank account already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Saurav Jha\",\n    \"phoneNo\": \"9425041103\",\n    \"email\": \"saurav@gmail.com\",\n    \"password\": \"bannrx1234\",\n    \"role\": \"ROLE_BDA\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250003,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\": \"id1\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/bda/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 20 Apr 2025 14:09:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Bank details already exists.\"\n}"
 						}
 					]
 				},
