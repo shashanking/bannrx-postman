@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "b2dd2bf8-722d-474b-b1d4-88dffb6d2df0",
+		"_postman_id": "0c5b1e39-c795-49a3-8a3f-baf443afde90",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "31364017",
-		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-b2dd2bf8-722d-474b-b1d4-88dffb6d2df0?action=share&source=collection_link&creator=31364017"
+		"_exporter_id": "10551797"
 	},
 	"item": [
 		{
@@ -2567,7 +2566,7 @@
 					]
 				},
 				{
-					"name": "updateBusinessApi",
+					"name": "UpdateBusinessApi",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -2890,6 +2889,329 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"id\": \"Business Id is mandatory.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateAddressAPI",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"id\":\"AD20250419TOQrgoJ7pO\",\r\n    \"addressLine1\":\"Maa Ambe temple near Patna Juction\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/address/update",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"address",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"id\":\"AD20250419TOQrgoJ7pO\",\r\n    \"addressLine1\":\"Maa Ambe temple near Patna Juction\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/address/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"address",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Apr 2025 15:06:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"The address has been updated successfully\",\n    \"responseBody\": {\n        \"id\": \"AD20250419TOQrgoJ7pO\",\n        \"addressLine1\": \"Maa Ambe temple near Patna Juction\",\n        \"addressLine2\": null,\n        \"city\": \"Bhawanipatna\",\n        \"state\": \"Odisha\",\n        \"pincode\": \"811308\",\n        \"latitude\": 1,\n        \"longitude\": 1\n    }\n}"
+						},
+						{
+							"name": "Error: Address Details are associated to other user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"id\":\"AD20250419amtfTgh14S\",\r\n    \"addressLine1\":\"Maa Ambe temple near Patna Juction\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/address/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"address",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Apr 2025 15:10:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Address Details are associated to other user.\"\n}"
+						},
+						{
+							"name": "Error: Address Id is mandatory",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/address/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"address",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Apr 2025 15:16:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"id\": \"Address Id is mandatory\"\n    }\n}"
 						}
 					]
 				}
@@ -3222,347 +3544,6 @@
 							"body": "{\n    \"statusCode\": 200,\n    \"responseBody\": {\n        \"id\": \"VA20250419mnhsqtBlZb\",\n        \"verificationData\": {\n            \"process\": \"MANUAL\",\n            \"id\": \"BD20250419bWQdS7NnDq\",\n            \"accountNo\": \"202503250003\",\n            \"ifscCode\": \"ICIC0000269\",\n            \"verified\": false,\n            \"verificationProcessId\": null\n        },\n        \"purpose\": \"BANK_DETAILS\",\n        \"verified\": false\n    }\n}"
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "Address API",
-			"item": [
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{current-token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{   \r\n    \"id\":\"AD20250419TOQrgoJ7pO\",\r\n    \"addressLine1\":\"Maa Ambe temple near Patna Juction\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local-common-ms}}/v1/api/address/update",
-							"host": [
-								"{{local-common-ms}}"
-							],
-							"path": [
-								"v1",
-								"api",
-								"address",
-								"update"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Success",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{   \r\n    \"id\":\"AD20250419TOQrgoJ7pO\",\r\n    \"addressLine1\":\"Maa Ambe temple near Patna Juction\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{local-common-ms}}/v1/api/address/update",
-									"host": [
-										"{{local-common-ms}}"
-									],
-									"path": [
-										"v1",
-										"api",
-										"address",
-										"update"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 26 Apr 2025 15:06:25 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"The address has been updated successfully\",\n    \"responseBody\": {\n        \"id\": \"AD20250419TOQrgoJ7pO\",\n        \"addressLine1\": \"Maa Ambe temple near Patna Juction\",\n        \"addressLine2\": null,\n        \"city\": \"Bhawanipatna\",\n        \"state\": \"Odisha\",\n        \"pincode\": \"811308\",\n        \"latitude\": 1,\n        \"longitude\": 1\n    }\n}"
-						},
-						{
-							"name": "Error: Address Details are associated to other user",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{   \r\n    \"id\":\"AD20250419amtfTgh14S\",\r\n    \"addressLine1\":\"Maa Ambe temple near Patna Juction\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{local-common-ms}}/v1/api/address/update",
-									"host": [
-										"{{local-common-ms}}"
-									],
-									"path": [
-										"v1",
-										"api",
-										"address",
-										"update"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 26 Apr 2025 15:10:09 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Address Details are associated to other user.\"\n}"
-						},
-						{
-							"name": "Error: Address Id is mandatory",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{  \r\n    \r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{local-common-ms}}/v1/api/address/update",
-									"host": [
-										"{{local-common-ms}}"
-									],
-									"path": [
-										"v1",
-										"api",
-										"address",
-										"update"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 26 Apr 2025 15:16:09 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"id\": \"Address Id is mandatory\"\n    }\n}"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "BankDetails",
-			"item": [
-				{
-					"name": "update",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
 				}
 			]
 		}
