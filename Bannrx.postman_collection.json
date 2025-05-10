@@ -3595,7 +3595,8 @@
 								"device",
 								"register"
 							]
-						}
+						},
+						"description": "### Register Device\n\nThis endpoint allows the registration of a new device with its specifications.\n\n#### Request Body\n\n- dimension (object)\n    \n    - length (number): Length of the device\n        \n    - breadth (number): Breadth of the device\n        \n    - unit (string): Unit of measurement\n        \n- isFrontCameraAvailable (boolean): Indicates if the front camera is available\n    \n- isBackCameraAvailable (boolean): Indicates if the back camera is available\n    \n- isWorking (boolean): Indicates if the device is in working condition\n    \n- active (boolean): Indicates if the device is active\n    \n- remarks (string): Additional remarks about the device\n    \n\n#### Response\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"id\": {\n          \"type\": \"string\"\n        },\n        \"dimension\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"length\": {\n              \"type\": \"number\"\n            },\n            \"breadth\": {\n              \"type\": \"number\"\n            },\n            \"unit\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"isFrontCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isBackCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isWorking\": {\n          \"type\": \"boolean\"\n        },\n        \"active\": {\n          \"type\": \"boolean\"\n        },\n        \"remarks\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n  }\n}\n\n ```"
 					},
 					"response": [
 						{
@@ -4239,7 +4240,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 10 May 2025 04:51:41 GMT"
+									"value": "Sat, 10 May 2025 05:24:16 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -4251,7 +4252,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device registration successfully\",\n    \"responseBody\": {\n        \"id\": \"DE202505107hHaC02Ehj\",\n        \"dimension\": {\n            \"length\": 10.5,\n            \"breadth\": 7.2,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device registration successfully\",\n    \"responseBody\": {\n        \"id\": \"DE20250510U0hCmjyGqH\",\n        \"dimension\": {\n            \"length\": 10.5,\n            \"breadth\": 7.2,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
 						}
 					]
 				},
@@ -4268,7 +4269,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"DI20250504J38OIf3Odr\",\r\n        \"dimension\": {\r\n           \"breadth\": 14\r\n        }\r\n}",
+							"raw": "{\r\n    \"id\": \"DE202505107hHaC02Ehj\",\r\n        \"dimension\": {\r\n           \"breadth\": 12\r\n        }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4286,7 +4287,8 @@
 								"device",
 								"update"
 							]
-						}
+						},
+						"description": "This endpoint allows you to update the device information using an HTTP PUT request to {{local-common-ms}}/v1/api/device/update. The request should include a payload with the device ID and the updated dimensions. An example of the payload is as follows:\n\n``` json\n{\n  \"id\": \"DE202505107hHaC02Ehj\",\n  \"dimension\": {\n    \"breadth\": 12\n  }\n}\n\n ```\n\nThe response to this request will have a status code of 200 and a content type of application/json. The response body will include a statusCode, message, and responseBody with updated device information. Here is an example of the response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"id\": \"\",\n    \"dimension\": {\n      \"length\": 0,\n      \"breadth\": 0,\n      \"unit\": \"\"\n    },\n    \"isFrontCameraAvailable\": true,\n    \"isBackCameraAvailable\": true,\n    \"isWorking\": true,\n    \"active\": true,\n    \"remarks\": \"\"\n  }\n}\n\n ```\n\nThe statusCode indicates the status of the update operation, and the responseBody provides the updated device information. The user's specific instruction is to \"Update the ID as a new updation.\".\n\nThis endpoint allows the client to update the details of a specific device.\n\n#### Request Body\n\n- id (string, required): The unique identifier of the device.\n    \n- dimension (object, required): The dimensions of the device.\n    \n    - breadth (number, optional): The breadth of the device.\n        \n\n#### Response\n\nThe response body follows the JSON schema below:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"id\": {\n          \"type\": \"string\"\n        },\n        \"dimension\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"length\": {\n              \"type\": \"number\"\n            },\n            \"breadth\": {\n              \"type\": \"number\"\n            },\n            \"unit\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"isFrontCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isBackCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isWorking\": {\n          \"type\": \"boolean\"\n        },\n        \"active\": {\n          \"type\": \"boolean\"\n        },\n        \"remarks\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n  }\n}\n\n ```"
 					},
 					"response": [
 						{
@@ -4866,6 +4868,103 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Breadth must be positive.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"DE202505107hHaC02Ehj\",\r\n        \"dimension\": {\r\n           \"breadth\": 12\r\n        }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 05:27:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device updated Successful\",\n    \"responseBody\": {\n        \"id\": \"DE202505107hHaC02Ehj\",\n        \"dimension\": {\n            \"length\": 10.5,\n            \"breadth\": 12,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
 						}
 					]
 				},
@@ -4881,7 +4980,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{local-common-ms}}/v1/api/device/delete?deviceId=DI20250503WM3y2yU1Dm",
+							"raw": "{{local-common-ms}}/v1/api/device/delete?deviceId=DE202505107hHaC02Ehj",
 							"host": [
 								"{{local-common-ms}}"
 							],
@@ -4894,10 +4993,11 @@
 							"query": [
 								{
 									"key": "deviceId",
-									"value": "DI20250503WM3y2yU1Dm"
+									"value": "DE202505107hHaC02Ehj"
 								}
 							]
-						}
+						},
+						"description": "### Delete Device\n\nThis endpoint is used to delete a specific device by providing the device ID in the request.\n\n#### Request Parameters\n\n- `deviceId` (query parameter) - The unique identifier of the device to be deleted.\n    \n\n#### Response\n\nUpon successful deletion, the server will respond with a status code of 200 and a JSON body containing the following parameters:\n\n- `statusCode` - Indicates the status of the operation. A value of 0 typically signifies a successful deletion.\n    \n- `errorMessage` - An empty string, indicating no error occurred during the deletion process.\n    \n\n#### Example\n\nRequest:\n\n```\nDELETE {{local-common-ms}}/v1/api/device/delete?deviceId=DE202505107hHaC02Ehj\n\n ```\n\nResponse:\n\n```\n{\n    \"statusCode\": 0,\n    \"errorMessage\": \"\"\n}\n\n ```"
 					},
 					"response": [
 						{
@@ -5195,7 +5295,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/device/delete?deviceId=DE20250503WM3y2yU1Dm",
+									"raw": "{{local-common-ms}}/v1/api/device/delete?deviceId=DE202505107hHaC02Ehj",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -5208,7 +5308,7 @@
 									"query": [
 										{
 											"key": "deviceId",
-											"value": "DE20250503WM3y2yU1Dm"
+											"value": "DE202505107hHaC02Ehj"
 										}
 									]
 								}
@@ -5263,7 +5363,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 04 May 2025 09:43:32 GMT"
+									"value": "Sat, 10 May 2025 05:30:29 GMT"
 								},
 								{
 									"key": "Keep-Alive",
