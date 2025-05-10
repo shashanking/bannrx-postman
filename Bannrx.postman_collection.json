@@ -4240,7 +4240,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 10 May 2025 05:24:16 GMT"
+									"value": "Sat, 10 May 2025 09:42:04 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -4252,7 +4252,104 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device registration successfully\",\n    \"responseBody\": {\n        \"id\": \"DE20250510U0hCmjyGqH\",\n        \"dimension\": {\n            \"length\": 10.5,\n            \"breadth\": 7.2,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device registration successfully\",\n    \"responseBody\": {\n        \"id\": \"DE20250510XniDzBDS4S\",\n        \"dimension\": {\n            \"length\": 10.5,\n            \"breadth\": 7.2,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dimension\": {\r\n    \"length\": 10,\r\n    \"breadth\": 7.2,\r\n    \"unit\": \"Cm\"\r\n  },\r\n  \"isFrontCameraAvailable\": true,\r\n  \"isBackCameraAvailable\": true,\r\n  \"isWorking\": true,\r\n  \"active\": true,\r\n  \"remarks\": \"New device with both camera.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 14:28:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device registration successfully\",\n    \"responseBody\": {\n        \"id\": \"DE20250510deA31irKKC\",\n        \"dimension\": {\n            \"length\": 10,\n            \"breadth\": 7.2,\n            \"unit\": \"CM\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
 						}
 					]
 				},
@@ -4269,7 +4366,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"DE202505107hHaC02Ehj\",\r\n        \"dimension\": {\r\n           \"breadth\": 12\r\n        }\r\n}",
+							"raw": "{\r\n    \"id\": \"DE20250510XniDzBDS4S\",\r\n        \"dimension\": {\r\n            \"length\":10,\r\n           \"breadth\": 12,\r\n           \"unit\":\"cm\"\r\n        }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4288,7 +4385,7 @@
 								"update"
 							]
 						},
-						"description": "This endpoint allows you to update the device information using an HTTP PUT request to {{local-common-ms}}/v1/api/device/update. The request should include a payload with the device ID and the updated dimensions. An example of the payload is as follows:\n\n``` json\n{\n  \"id\": \"DE202505107hHaC02Ehj\",\n  \"dimension\": {\n    \"breadth\": 12\n  }\n}\n\n ```\n\nThe response to this request will have a status code of 200 and a content type of application/json. The response body will include a statusCode, message, and responseBody with updated device information. Here is an example of the response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"id\": \"\",\n    \"dimension\": {\n      \"length\": 0,\n      \"breadth\": 0,\n      \"unit\": \"\"\n    },\n    \"isFrontCameraAvailable\": true,\n    \"isBackCameraAvailable\": true,\n    \"isWorking\": true,\n    \"active\": true,\n    \"remarks\": \"\"\n  }\n}\n\n ```\n\nThe statusCode indicates the status of the update operation, and the responseBody provides the updated device information. The user's specific instruction is to \"Update the ID as a new updation.\".\n\nThis endpoint allows the client to update the details of a specific device.\n\n#### Request Body\n\n- id (string, required): The unique identifier of the device.\n    \n- dimension (object, required): The dimensions of the device.\n    \n    - breadth (number, optional): The breadth of the device.\n        \n\n#### Response\n\nThe response body follows the JSON schema below:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"id\": {\n          \"type\": \"string\"\n        },\n        \"dimension\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"length\": {\n              \"type\": \"number\"\n            },\n            \"breadth\": {\n              \"type\": \"number\"\n            },\n            \"unit\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"isFrontCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isBackCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isWorking\": {\n          \"type\": \"boolean\"\n        },\n        \"active\": {\n          \"type\": \"boolean\"\n        },\n        \"remarks\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n  }\n}\n\n ```"
+						"description": "### Update Device Information\n\nThis endpoint allows you to update the details of a specific device by sending an HTTP PUT request to `{{local-common-ms}}/v1/api/device/update`.\n\n#### Request Body\n\nThe request should include the following payload with the raw request body type:\n\n``` json\n{\n  \"id\": \"DE20250510XniDzBDS4S\",\n  \"dimension\": {\n    \"length\": 10,\n    \"breadth\": 12,\n    \"unit\": \"cm\"\n  }\n}\n\n ```\n\n- `id` (string, required): The unique identifier of the device.\n    \n- `dimension` (object, required): The dimensions of the device.\n    \n    - `length` (number, required): The length of the device.\n        \n    - `breadth` (number, required): The breadth of the device.\n        \n    - `unit` (string, required): The unit of measurement for the dimensions.\n        \n\n#### Response\n\nThe response to this request will have a status code of 200 and a content type of `application/json`. The response body follows the JSON schema below:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"id\": \"\",\n    \"dimension\": {\n      \"length\": 0,\n      \"breadth\": 0,\n      \"unit\": \"\"\n    },\n    \"isFrontCameraAvailable\": true,\n    \"isBackCameraAvailable\": true,\n    \"isWorking\": true,\n    \"active\": true,\n    \"remarks\": \"\"\n  }\n}\n\n ```\n\nThe `statusCode` indicates the status of the update operation, and the `responseBody` provides the updated device information.\n\n#### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"errorMessage\": \"\"\n}\n\n ```\n\n``` json\n{\n  \"id\": \"DE202505107hHaC02Ehj\",\n  \"dimension\": {\n    \"breadth\": 12\n  }\n}\n\n ```\n\nThe response to this request will have a status code of 200 and a content type of application/json. The response body will include a statusCode, message, and responseBody with updated device information. Here is an example of the response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"id\": \"\",\n    \"dimension\": {\n      \"length\": 0,\n      \"breadth\": 0,\n      \"unit\": \"\"\n    },\n    \"isFrontCameraAvailable\": true,\n    \"isBackCameraAvailable\": true,\n    \"isWorking\": true,\n    \"active\": true,\n    \"remarks\": \"\"\n  }\n}\n\n ```\n\nThe statusCode indicates the status of the update operation, and the responseBody provides the updated device information. The user's specific instruction is to \"Update the ID as a new updation.\".\n\nThis endpoint allows the client to update the details of a specific device.\n\n#### Request Body\n\n- id (string, required): The unique identifier of the device.\n    \n- dimension (object, required): The dimensions of the device.\n    \n    - breadth (number, optional): The breadth of the device.\n        \n\n#### Response\n\nThe response body follows the JSON schema below:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"id\": {\n          \"type\": \"string\"\n        },\n        \"dimension\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"length\": {\n              \"type\": \"number\"\n            },\n            \"breadth\": {\n              \"type\": \"number\"\n            },\n            \"unit\": {\n              \"type\": \"string\"\n            }\n          }\n        },\n        \"isFrontCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isBackCameraAvailable\": {\n          \"type\": \"boolean\"\n        },\n        \"isWorking\": {\n          \"type\": \"boolean\"\n        },\n        \"active\": {\n          \"type\": \"boolean\"\n        },\n        \"remarks\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n  }\n}\n\n ```"
 					},
 					"response": [
 						{
@@ -4591,7 +4688,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"DE202505107hHaC02Ehj\",\r\n        \"dimension\": {\r\n            \"breadth\": 10\r\n        }\r\n}",
+									"raw": "{\r\n    \"id\": \"DE20250510XniDzBDS4S\",\r\n        \"dimension\": {\r\n            \"breadth\": 10\r\n        }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4882,7 +4979,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"DE202505107hHaC02Ehj\",\r\n        \"dimension\": {\r\n           \"breadth\": 12\r\n        }\r\n}",
+									"raw": "{\r\n    \"id\": \"DE20250510XniDzBDS4S\",\r\n        \"dimension\": {\r\n            \"length\":10,\r\n           \"breadth\": 12,\r\n           \"unit\":\"cm\"\r\n        }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4952,7 +5049,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 10 May 2025 05:27:18 GMT"
+									"value": "Sat, 10 May 2025 11:46:52 GMT"
 								},
 								{
 									"key": "Keep-Alive",
@@ -4964,7 +5061,197 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device updated Successful\",\n    \"responseBody\": {\n        \"id\": \"DE202505107hHaC02Ehj\",\n        \"dimension\": {\n            \"length\": 10.5,\n            \"breadth\": 12,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device updated Successful\",\n    \"responseBody\": {\n        \"id\": \"DE20250510XniDzBDS4S\",\n        \"dimension\": {\n            \"length\": 10,\n            \"breadth\": 12,\n            \"unit\": \"cm\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
+						},
+						{
+							"name": "Error: Invalid Dimension Details",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"DE20250510deA31irKKC\",\r\n        \"dimension\": {\r\n            \r\n        }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 14:40:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"unit\": \"Unit cannot be null\",\n        \"breadth\": \"breadth cannot be null\",\n        \"length\": \"length cannot be null\"\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"DE20250510deA31irKKC\",\r\n    \"isFrontCameraAvailable\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 14:47:04 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device updated Successful\",\n    \"responseBody\": {\n        \"id\": \"DE20250510deA31irKKC\",\n        \"dimension\": {\n            \"length\": 10,\n            \"breadth\": 11,\n            \"unit\": \"CM\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"New device with both camera.\"\n    }\n}"
 						}
 					]
 				},
@@ -4980,7 +5267,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{local-common-ms}}/v1/api/device/delete?deviceId=DE202505107hHaC02Ehj",
+							"raw": "{{local-common-ms}}/v1/api/device/delete?deviceId=DE20250510ydO3av8DsH",
 							"host": [
 								"{{local-common-ms}}"
 							],
@@ -4993,7 +5280,7 @@
 							"query": [
 								{
 									"key": "deviceId",
-									"value": "DE202505107hHaC02Ehj"
+									"value": "DE20250510ydO3av8DsH"
 								}
 							]
 						},
@@ -5376,6 +5663,121 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 200,\n    \"errorMessage\": \"Device deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "fetchAllDevice",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/device/all",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"device",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/all",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 May 2025 07:02:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All Device Fetched Successfully.\",\n    \"responseBody\": [\n        {\n            \"id\": \"DE20250510Pe4XmzIc1X\",\n            \"dimension\": {\n                \"length\": 11.5,\n                \"breadth\": 9,\n                \"unit\": \"mm\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": true,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with both camera.\"\n        },\n        {\n            \"id\": \"DE20250510U0hCmjyGqH\",\n            \"dimension\": {\n                \"length\": 10.5,\n                \"breadth\": 7.2,\n                \"unit\": \"cm\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": true,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with both camera.\"\n        },\n        {\n            \"id\": \"DI20250503K1GZS9kjOY\",\n            \"dimension\": {\n                \"length\": 13.2,\n                \"breadth\": 10,\n                \"unit\": \"in\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": true,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with front and back camera both\"\n        },\n        {\n            \"id\": \"DI202505048snsEFGkrn\",\n            \"dimension\": {\n                \"length\": 2.5,\n                \"breadth\": 1.2,\n                \"unit\": \"cm\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": false,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with front camera only\"\n        },\n        {\n            \"id\": \"DI20250504J38OIf3Odr\",\n            \"dimension\": {\n                \"length\": 10.5,\n                \"breadth\": 12,\n                \"unit\": \"mm\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": false,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with front camera only\"\n        }\n    ]\n}"
 						}
 					]
 				}
