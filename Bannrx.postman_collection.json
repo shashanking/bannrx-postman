@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "acd7bb94-9346-4e91-9dc1-b910e41adb6a",
+		"_postman_id": "b2dd2bf8-722d-474b-b1d4-88dffb6d2df0",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10551797"
+		"_exporter_id": "31364017",
+		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-b2dd2bf8-722d-474b-b1d4-88dffb6d2df0?action=share&source=collection_link&creator=31364017"
 	},
 	"item": [
 		{
@@ -3554,10 +3555,7 @@
 					"name": "update",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
+						"header": []
 					},
 					"response": []
 				}
@@ -5821,7 +5819,7 @@
 								}
 							]
 						},
-						"description": "### Request\n\nThis API endpoint makes an HTTP GET request to retrieve a list of devices based on the provided query parameters. The following query parameters are available for filtering the devices:\n\n- `isWorking` (boolean): Indicates whether to filter the devices by working status. Set to \"true\" to filter by working devices.\n- `length` (Float): The length of the device.\n- `lengthOperator` (String): The operator used for comparison with the length.\n    \n- `breadth` (Float): The breadth of the device.\n- `breadthOperator` (String): The operator used for comparison with the breadth.\n- `unit` (String): The unit of measurement for the dimensions (e.g., CM).\n    \n\n### Possible values\n\n- `lengthOperator or breadthOperator`\n    \n    - EQUALTO\n        \n    - LESSTHAN\n        \n    - LESSTHANOREQUALTO\n        \n    - GREATERTHAN\n        \n    - GREATERTHANOREQUALTO\n        \n\n#### Example\n\n```\n{{local-common-ms}}/v1/api/device/all?isWorking=true&length=0&lengthOperator=eq&breadth=0&breadthOperator=eq&unit=\n\n ```\n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include:\n\n- `statusCode` (number): Indicates the status of the response.\n- `message` (string): Provides any additional information or messages related to the response.\n- `responseBody` (object): Contains the main content of the response, including the following fields:\n    - `perPage` (number): The number of items per page.\n    - `pageNo` (number): The page number.\n    - `sortBy` (string): The field used for sorting.\n    - `sortDirection` (string): The direction of sorting.\n    - `content` (array): An array of device information.\n        - `id` (string): The unique identifier of the device.\n        - `dimension` (object): Contains the dimensions of the device, including length, breadth, and unit.\n            - `length` (number): The length of the device.\n            - `breadth` (number): The breadth of the device.\n            - `unit` (string): The unit of measurement for the dimensions.\n        - `isFrontCameraAvailable` (boolean): Indicates whether the front camera is available for the device.\n        - `isBackCameraAvailable` (boolean): Indicates whether the back camera is available for the device.\n        - `isWorking` (boolean): Indicates the working status of the device.\n        - `active` (boolean): Indicates the active status of the device.\n        - `remarks` (string): Additional remarks or notes about the device.\n    - `count` (number): The total count of devices.\n\n#### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n### Custom Enum Definitions\n\n- `lengthOperator` (enum): Enumerated values for operators related to the length dimension.\n- `breadthOperator` (enum): Enumerated values for operators related to the breadth dimension.\n- `unit` (string): The unit of measurement for the dimensions, which only accepts \"CM\".\n    \n\n### Schema\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"perPage\": {\n          \"type\": \"number\"\n        },\n        \"pageNo\": {\n          \"type\": \"number\"\n        },\n        \"sortBy\": {\n          \"type\": \"string\"\n        },\n        \"sortDirection\": {\n          \"type\": \"string\"\n        },\n        \"content\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"id\": {\n                \"type\": \"string\"\n              },\n              \"dimension\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"length\": {\n                    \"type\": \"number\"\n                  },\n                  \"breadth\": {\n                    \"type\": \"number\"\n                  },\n                  \"unit\": {\n                    \"type\": \"string\"\n                  }\n                }\n              },\n              \"isFrontCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isBackCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isWorking\": {\n                \"type\": \"boolean\"\n              },\n              \"active\": {\n                \"type\": \"boolean\"\n              },\n              \"remarks\": {\n                \"type\": \"string\"\n              }\n            }\n          }\n        },\n        \"count\": {\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}\n\n ```\n\nThis API endpoint makes an HTTP GET request to retrieve a list of devices based on the provided query parameters. The query parameters include:\n\n- `isWorking` (query parameter): Indicates whether the device is in working condition.\n- `length` (query parameter): Represents the length of the device.\n- `lengthOperator` (query parameter): Specifies the operator used for comparison with the length.\n- `breadth` (query parameter): Represents the breadth of the device.\n- `breadthOperator` (query parameter): Specifies the operator used for comparison with the breadth.\n- `unit` (query parameter): Indicates the unit of measurement for the dimensions (e.g., CM).\n    \n\n#### Example\n\n```\n{{local-common-ms}}/v1/api/device/all?isWorking=true&length=0&lengthOperator=eq&breadth=0&breadthOperator=eq&unit=\n\n ```\n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include an array of devices with their respective details such as ID, dimensions, front and back camera availability, working status, and remarks. The \"statusCode\" and \"message\" fields provide information about the status of the request, while the \"responseBody\" contains the array of devices along with pagination details.\n\nExample Response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n### Query Parameters\n\n- `isWorking` (boolean): Indicates whether to filter the devices by working status. Set to \"true\" to filter by working devices.\n- `length` (float): The length of the device.\n- `lengthOperator` (string): The operator used for comparison with the length.\n- `breadth` (float): The breadth of the device.\n- `breadthOperator` (string): The operator used for comparison with the breadth.\n- `unit` (string): The unit of measurement for the dimensions, which only accepts \"CM\".\n    \n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include:\n\n- `statusCode` (number): Indicates the status of the response.\n- `message` (string): Provides any additional information or messages related to the response.\n- `responseBody` (object): Contains the main content of the response, including the following fields:\n    - `perPage` (number): The number of items per page.\n    - `pageNo` (number): The page number.\n    - `sortBy` (string): The field used for sorting.\n    - `sortDirection` (string): The direction of sorting.\n    - `content` (array): An array of device information, including the following fields for each device:\n        - `id` (string): The unique identifier of the device.\n        - `dimension` (object): Contains the dimensions of the device, including length, breadth, and unit.\n            - `length` (number): The length of the device.\n            - `breadth` (number): The breadth of the device.\n            - `unit` (string): The unit of measurement for the dimensions.\n        - `isFrontCameraAvailable` (boolean): Indicates whether the front camera is available for the device.\n        - `isBackCameraAvailable` (boolean): Indicates whether the back camera is available for the device.\n        - `isWorking` (boolean): Indicates the working status of the device.\n        - `active` (boolean): Indicates the active status of the device.\n        - `remarks` (string): Additional remarks or notes about the device.\n    - `count` (number): The total count of devices.\n\n### Custom Enum Definitions\n\n- `lengthOperator` (enum): Enumerated values for operators related to the length dimension.\n- `breadthOperator` (enum): Enumerated values for operators related to the breadth dimension.\n- `unit` (string): The unit of measurement for the dimensions, which only accepts \"CM\".\n    \n\n### Example Response Schema\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"perPage\": {\n          \"type\": \"number\"\n        },\n        \"pageNo\": {\n          \"type\": \"number\"\n        },\n        \"sortBy\": {\n          \"type\": \"string\"\n        },\n        \"sortDirection\": {\n          \"type\": \"string\"\n        },\n        \"content\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"id\": {\n                \"type\": \"string\"\n              },\n              \"dimension\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"length\": {\n                    \"type\": \"number\"\n                  },\n                  \"breadth\": {\n                    \"type\": \"number\"\n                  },\n                  \"unit\": {\n                    \"type\": \"string\"\n                  }\n                }\n              },\n              \"isFrontCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isBackCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isWorking\": {\n                \"type\": \"boolean\"\n              },\n              \"active\": {\n                \"type\": \"boolean\"\n              },\n              \"remarks\": {\n                \"type\": \"string\"\n              }\n            }\n          }\n        },\n        \"count\": {\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}\n\n ```\n\nThis API endpoint retrieves a list of devices based on the provided query parameters.\n\n#### Query Parameters\n\n- `isWorking` (boolean): Indicates whether to filter the devices by working status. Set to \"true\" to filter by working devices.\n- `length` (float): The length of the device.\n- `lengthOperator` (string): The operator used for comparison with the length.\n- `breadth` (float): The breadth of the device.\n- `breadthOperator` (string): The operator used for comparison with the breadth.\n- `unit` (string): The unit of measurement for the dimensions (e.g., CM).\n    \n\n#### Example\n\n```\n{{local-common-ms}}/v1/api/device/all?isWorking=true&length=0&lengthOperator=eq&breadth=0&breadthOperator=eq&unit=\n\n ```\n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include:\n\n- `statusCode` (number): Indicates the status of the response.\n- `message` (string): Provides any additional information or messages related to the response.\n- `responseBody` (object): Contains the main content of the response, including the following fields:\n    - `perPage` (number): The number of items per page.\n    - `pageNo` (number): The page number.\n    - `sortBy` (string): The field used for sorting.\n    - `sortDirection` (string): The direction of sorting.\n    - `content` (array): An array of device information.\n        - `id` (string): The unique identifier of the device.\n        - `dimension` (object): Contains the dimensions of the device, including length, breadth, and unit.\n            - `length` (number): The length of the device.\n            - `breadth` (number): The breadth of the device.\n            - `unit` (string): The unit of measurement for the dimensions.\n        - `isFrontCameraAvailable` (boolean): Indicates whether the front camera is available for the device.\n        - `isBackCameraAvailable` (boolean): Indicates whether the back camera is available for the device.\n        - `isWorking` (boolean): Indicates the working status of the device.\n        - `active` (boolean): Indicates the active status of the device.\n        - `remarks` (string): Additional remarks or notes about the device.\n    - `count` (number): The total count of devices.\n\n#### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n### Custom Enum Definitions\n\n- `lengthOperator` (enum): Enumerated values for operators related to the length dimension.\n- `breadthOperator` (enum): Enumerated values for operators related to the breadth dimension.\n- `unit` (string): The unit of measurement for the dimensions, which only accepts \"CM\".\n    \n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"perPage\": {\n          \"type\": \"number\"\n        },\n        \"pageNo\": {\n          \"type\": \"number\"\n        },\n        \"sortBy\": {\n          \"type\": \"string\"\n        },\n        \"sortDirection\": {\n          \"type\": \"string\"\n        },\n        \"content\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"id\": {\n                \"type\": \"string\"\n              },\n              \"dimension\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"length\": {\n                    \"type\": \"number\"\n                  },\n                  \"breadth\": {\n                    \"type\": \"number\"\n                  },\n                  \"unit\": {\n                    \"type\": \"string\"\n                  }\n                }\n              },\n              \"isFrontCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isBackCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isWorking\": {\n                \"type\": \"boolean\"\n              },\n              \"active\": {\n                \"type\": \"boolean\"\n              },\n              \"remarks\": {\n                \"type\": \"string\"\n              }\n            }\n          }\n        },\n        \"count\": {\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}\n\n ```\n\n### Request Parameters\n\n- isWorking (query parameter): Indicates whether the device is in working condition.\n    \n\n#### Example\n\n```\n{{local-common-ms}}/v1/api/device/all?isWorking=true&length=0&lengthOperator=eq&breadth=0&breadthOperator=eq&unit=\n\n ```\n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include an array of devices with the following properties:\n\n- id: The unique identifier of the device.\n- dimension: The dimensions of the device, including length, breadth, and unit.\n- isFrontCameraAvailable: Indicates whether the front camera is available for the device.\n- isBackCameraAvailable: Indicates whether the back camera is available for the device.\n- isWorking: Indicates whether the device is in working condition.\n- active: Indicates the active status of the device.\n- remarks: Additional remarks about the device.\n    \n\n#### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n### Query Parameters\n\n- `length`: (Float) The length of the device.\n- `lengthOperator`: (String) The operator used for comparison with the length.\n- `breadth`: (Float) The breadth of the device.\n- `breadthOperator`: (String) The operator used for comparison with the breadth.\n- `unit`: (String) The unit of measurement for the dimensions (e.g., CM).\n    \n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include an array of devices with their respective details such as ID, dimensions, front and back camera availability, working status, and remarks. The \"statusCode\" and \"message\" fields provide information about the status of the request, while the \"responseBody\" contains the array of devices along with pagination details.\n\nExample Response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n### Request Parameters\n\n- isWorking (boolean): Indicates whether to filter the devices by working status. Set to \"true\" to filter by working devices.\n    \n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include:\n\n- statusCode (number): Indicates the status of the response.\n- message (string): Provides any additional information or messages related to the response.\n- responseBody (object): Contains the main content of the response, including the following fields:\n    - perPage (number): The number of items per page.\n    - pageNo (number): The page number.\n    - sortBy (string): The field used for sorting.\n    - sortDirection (string): The direction of sorting.\n    - content (array): An array of device information, including the following fields for each device:\n        - id (string): The unique identifier of the device.\n        - dimension (object): Contains the dimensions of the device, including length, breadth, and unit.\n            - length (number): The length of the device.\n            - breadth (number): The breadth of the device.\n            - unit (string): The unit of measurement for the dimensions.\n        - isFrontCameraAvailable (boolean): Indicates whether the front camera is available for the device.\n        - isBackCameraAvailable (boolean): Indicates whether the back camera is available for the device.\n        - isWorking (boolean): Indicates the working status of the device.\n        - active (boolean): Indicates the active status of the device.\n        - remarks (string): Additional remarks or notes about the device.\n    - count (number): The total count of devices.\n\n### Custom Enum Definitions\n\n- lengthOperator (enum): Enumerated values for operators related to the length dimension.\n- breadthOperator (enum): Enumerated values for operators related to the breadth dimension.\n- unit (string): The unit of measurement for the dimensions, which only accepts \"CM\".\n    \n\n### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"perPage\": {\n          \"type\": \"number\"\n        },\n        \"pageNo\": {\n          \"type\": \"number\"\n        },\n        \"sortBy\": {\n          \"type\": \"string\"\n        },\n        \"sortDirection\": {\n          \"type\": \"string\"\n        },\n        \"content\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"id\": {\n                \"type\": \"string\"\n              },\n              \"dimension\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"length\": {\n                    \"type\": \"number\"\n                  },\n                  \"breadth\": {\n                    \"type\": \"number\"\n                  },\n                  \"unit\": {\n                    \"type\": \"string\"\n                  }\n                }\n              },\n              \"isFrontCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isBackCameraAvailable\": {\n                \"type\": \"boolean\"\n              },\n              \"isWorking\": {\n                \"type\": \"boolean\"\n              },\n              \"active\": {\n                \"type\": \"boolean\"\n              },\n              \"remarks\": {\n                \"type\": \"string\"\n              }\n            }\n          }\n        },\n        \"count\": {\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}\n\n ```"
+						"description": "### Request\n\nThis API endpoint retrieves a list of devices based on the provided query parameters.\n\n#### Query Parameters\n\nStartFragment\n\n| Parameter | Type | Description | Required |\n| --- | --- | --- | --- |\n| `isWorking` | boolean | Filters devices by working status (`true` for working devices) | No |\n| `length` | float | Device length value for comparison | No |\n| `lengthOperator` | Enum | Operator for length comparison (  <br>EQUALTO, LESSTHAN, LESSTHANOREQUALTO, GREATERTHAN, GREATERTHANOREQUALTO) | No |\n| `breadth` | float | Device breadth value for comparison | No |\n| `breadthOperator` | Enum | Operator for breadth  <br>comparison (  <br>EQUALTO, LESSTHAN, LESSTHANOREQUALTO, GREATERTHAN, GREATERTHANOREQUALTO) | No |\n| `unit` | string | Measurement unit (only \"CM\" accepted) | No |\n| `perPage` | number | Items per page (pagination) | No |\n| `pageNo` | number | Page number (pagination) | No |\n| `sortBy` | string | Field to sort by | No |\n| `sortDirection` | string | Sort direction (`asc`/`desc`) | No |\n\nEndFragment\n\n- `isWorking` (boolean): Indicates whether to filter the devices by working status. Set to \"true\" to filter by working devices.\n    \n- `length` (float): The length of the device.\n    \n- `lengthOperator` (enum): The operator used for comparison with the length.\n    \n- `breadth` (float): The breadth of the device.\n    \n- `breadthOperator` (enum): The operator used for comparison with the breadth.\n    \n- `unit` (string): The unit of measurement for the dimensions, which only accepts \"CM\".\n    \n\n#### Example\n\n```\n{{local-common-ms}}/v1/api/device/all?isWorking=true&length=0&lengthOperator=eq&breadth=0&breadthOperator=eq&unit=\n\n ```\n\n### Response\n\nThe response will have a status code of 200 and a content type of \"application/json\". The response body will include an array of devices with their respective details such as ID, dimensions, front and back camera availability, working status, and remarks. The \"statusCode\" and \"message\" fields provide information about the status of the request, while the \"responseBody\" contains the array of devices along with pagination details.\n\nExample Response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"dimension\": {\n          \"length\": 0,\n          \"breadth\": 0,\n          \"unit\": \"\"\n        },\n        \"isFrontCameraAvailable\": true,\n        \"isBackCameraAvailable\": true,\n        \"isWorking\": true,\n        \"active\": true,\n        \"remarks\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n## Response Fields\n\n- **statusCode**: HTTP status code\n    \n- **message**: Optional status message\n    \n- **responseBody**:\n    \n    - **perPage**: Number of items per page\n        \n    - **pageNo**: Current page number\n        \n    - **sortBy**: Field used for sorting\n        \n    - **sortDirection**: Sort direction\n        \n    - **content**: Array of device objects\n        \n        - **id**: Device identifier\n            \n        - **dimension**:\n            \n            - **length**: Device length\n                \n            - **breadth**: Device breadth\n                \n            - **unit**: Measurement unit (CM)\n                \n        - **isFrontCameraAvailable**: Front camera status\n            \n        - **isBackCameraAvailable**: Back camera status\n            \n        - **isWorking**: Working status\n            \n        - **active**: Active status\n            \n        - **remarks**: Additional notes\n            \n    - **count**: Total number of devices"
 					},
 					"response": [
 						{
@@ -6033,7 +6031,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/device/all",
+									"raw": "{{local-common-ms}}/v1/api/device/all?length=10.5",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -6063,6 +6061,10 @@
 											"key": "isFrontCameraAvailable",
 											"value": "false",
 											"disabled": true
+										},
+										{
+											"key": "length",
+											"value": "10.5"
 										}
 									]
 								}
@@ -6143,7 +6145,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/device/all?isWorking=true",
+									"raw": "{{local-common-ms}}/v1/api/device/all?length=10",
 									"host": [
 										"{{local-common-ms}}"
 									],
@@ -6166,7 +6168,8 @@
 										},
 										{
 											"key": "isWorking",
-											"value": "true"
+											"value": "true",
+											"disabled": true
 										},
 										{
 											"key": "isFrontCameraAvailable",
@@ -6175,8 +6178,7 @@
 										},
 										{
 											"key": "length",
-											"value": "10",
-											"disabled": true
+											"value": "10"
 										},
 										{
 											"key": "lengthOperator",
@@ -6264,6 +6266,1528 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All Device Fetched Successfully.\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"DE202505101IKLAFwkMA\",\n                \"dimension\": {\n                    \"length\": 10.5,\n                    \"breadth\": 7.2,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": true,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with both camera.\"\n            },\n            {\n                \"id\": \"DE20250510JxjyXsTnVh\",\n                \"dimension\": {\n                    \"length\": 10,\n                    \"breadth\": 7.2,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": true,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with both camera.\"\n            },\n            {\n                \"id\": \"DE20250510deA31irKKC\",\n                \"dimension\": {\n                    \"length\": 10,\n                    \"breadth\": 11,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": true,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with both camera.\"\n            },\n            {\n                \"id\": \"DE20250517XZ6IeBpVlt\",\n                \"dimension\": {\n                    \"length\": 10.5,\n                    \"breadth\": 7.2,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": false,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with Front Camera Only But Working.\"\n            }\n        ],\n        \"count\": 4\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Campaign",
+			"item": [
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.to.have.status(200));\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields - statusCode, message, and responseBody\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.statusCode).to.exist;\r",
+									"    pm.expect(responseData.message).to.exist;\r",
+									"    pm.expect(responseData.responseBody).to.exist;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Name, description, startDate, and endDate are not empty strings\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.responseBody.name).to.be.a('string').and.to.not.be.empty;\r",
+									"    pm.expect(responseData.responseBody.description).to.be.a('string').and.to.not.be.empty;\r",
+									"    pm.expect(responseData.responseBody.startDate).to.be.a('string').and.to.not.be.empty;\r",
+									"    pm.expect(responseData.responseBody.endDate).to.be.a('string').and.to.not.be.empty;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response body contains the expected fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.responseBody).to.be.an('object');\r",
+									"\r",
+									"    const expectedFields = [\"name\", \"description\", \"startDate\", \"endDate\"];\r",
+									"    expectedFields.forEach(field => {\r",
+									"        pm.expect(responseData.responseBody).to.have.property(field);\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hum sath sath hae2\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"01/06/2025\",\r\n    \"endDate\": \"10/06/2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/campaign/register",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"campaign",
+								"register"
+							]
+						},
+						"description": "## Register Campaign\n\nThis endpoint allows the user to register a new campaign.\n\n### Request Body\n\n- `name` (string, required): The name of the campaign.\n    \n- `description` (string): A brief description of the campaign.\n    \n- `startDate` (string, required): The start date of the campaign in the format DD/MM/YYYY.\n    \n- `endDate` (string, required): The end date of the campaign in the format DD/MM/YYYY.\n    \n\n### Response\n\n- `statusCode` (number): Indicates the status of the request.\n    \n- `message` (string): Additional information or error message.\n    \n- `responseBody` (object):\n    \n    - `name` (string): The name of the campaign.\n        \n    - `description` (string): A brief description of the campaign.\n        \n    - `startDate` (string): The start date of the campaign.\n        \n    - `endDate` (string): The end date of the campaign.\n        \n\n### Response\n\nThe response body follows the JSON schema below:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"statusCode\": {\n      \"type\": \"number\"\n    },\n    \"errorMessage\": {\n      \"type\": \"string\"\n    },\n    \"responseBody\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"id\": {\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"type\": \"string\"\n        },\n        \"description\": {\n          \"type\": \"string\"\n        },\n        \"startDate\": {\n          \"type\": \"string\"\n        },\n        \"endDate\": {\n          \"type\": \"string\"\n        }\n      }\n    }\n  }\n}\n\n ```\n\n### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"errorMessage\": \"\"\n}\n\n ```\n\n### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"errorMessage\": \"\",\n  \"responseBody\": {\n    \"id\": \"\",\n    \"name\": \"\",\n    \"description\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Error: End date must be after start date.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hum sath sath hae\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"31/05/2025\",\r\n    \"endDate\": \"30/05/2025\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 10:05:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"End date must be after start date.\"\n}"
+						},
+						{
+							"name": "Error: Start date cannot be in the past.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hum sath sath hae\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"30/05/2025\",\r\n    \"endDate\": \"31/05/2025\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 10:06:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Start date cannot be in the past.\"\n}"
+						},
+						{
+							"name": "Error: Start date is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hum sath sath hae\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"\",\r\n    \"endDate\": \"31/05/2025\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 10:07:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"startDate\": \"Start date is required\"\n    }\n}"
+						},
+						{
+							"name": "Error: End date is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hum sath sath hae\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"31/05/2025\",\r\n    \"endDate\": \"\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 10:08:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"endDate\": \"End date is required\"\n    }\n}"
+						},
+						{
+							"name": "Error: Name is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"31/05/2025\",\r\n    \"endDate\": \"31/05/2025\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 10:10:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"name\": \"Name is required\"\n    }\n}"
+						},
+						{
+							"name": "Error: require feild",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 10:11:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"endDate\": \"End date is required\",\n        \"name\": \"Name is required\",\n        \"startDate\": \"Start date is required\"\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hum sath sath hae\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"01/06/2025\",\r\n    \"endDate\": \"10/06/2025\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 16:18:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Campaign Register successfully\",\n    \"responseBody\": {\n        \"id\": \"CM202505314xiD11poTf\",\n        \"name\": \"Hum sath sath hae\",\n        \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\n        \"startDate\": \"01/06/2025\",\n        \"endDate\": \"10/06/2025\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Add validation to make 'id' mandatory and ensure 'startDate' cannot be changed\r",
+									"pm.test(\"ID is mandatory in the response\", function () {\r",
+									"    pm.expect(pm.response.json().responseBody.id).to.not.be.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Start Date cannot be changed\", function () {\r",
+									"    pm.expect(pm.response.json().responseBody.startDate).to.eql(\"\");\r",
+									"});\r",
+									"\r",
+									"// Allow changes only to 'name', 'description', and 'endDate'\r",
+									"pm.test(\"Allow changes only to 'name', 'description', and 'endDate'\", function () {\r",
+									"    var allowedFields = ['name', 'description', 'endDate'];\r",
+									"    var responseBodyKeys = Object.keys(pm.response.json().responseBody);\r",
+									"    pm.expect(responseBodyKeys).to.include.members(allowedFields);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"CM20250531GNxZw8YVHL\",\r\n    \"name\":\"Hum sath sath hae.\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/campaign/update",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"campaign",
+								"update"
+							]
+						},
+						"description": "This endpoint allows updating a campaign using an HTTP PUT request to {{local-common-ms}}/v1/api/campaign/update. The request should include the campaign ID and the fields to be updated such as name, description, and endDate. The 'startDate' field cannot be changed, and the 'id' field is mandatory.\n\nThe request payload should be in raw format and include the campaign ID and the fields to be updated, for example:\n\n``` json\n{\n  \"id\": \"CM20250531GNxZw8YVHL\",\n  \"name\": \"Updated Campaign Name\",\n  \"description\": \"Updated campaign description\",\n  \"endDate\": \"2023-12-31\"\n}\n\n ```\n\nThe response will have a status code of 200 and a Content-Type of application/json. The response body will contain a statusCode indicating the success status, an optional errorMessage, and the responseBody with the updated campaign details, including id, name, description, startDate, and endDate.\n\nExample response:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"errorMessage\": \"\",\n  \"responseBody\": {\n    \"id\": \"CM20250531GNxZw8YVHL\",\n    \"name\": \"Updated Campaign Name\",\n    \"description\": \"Updated campaign description\",\n    \"startDate\": \"2022-01-01\",\n    \"endDate\": \"2023-12-31\"\n  }\n}\n\n ```\n\nThis endpoint allows the client to update a campaign by sending a PUT request to the specified URL.\n\n#### Request Body\n\n- **id** (string) - The unique identifier of the campaign to be updated.\n    \n- **name** (string) - The updated name of the campaign.\n    \n\n#### Response\n\nThe response will be in JSON format with the following schema:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"statusCode\": {\n            \"type\": \"number\"\n        },\n        \"errorMessage\": {\n            \"type\": \"string\"\n        },\n        \"responseBody\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"id\": {\n                    \"type\": \"string\"\n                },\n                \"name\": {\n                    \"type\": \"string\"\n                },\n                \"description\": {\n                    \"type\": \"string\"\n                },\n                \"startDate\": {\n                    \"type\": \"string\"\n                },\n                \"endDate\": {\n                    \"type\": \"string\"\n                }\n            }\n        }\n    }\n}\n\n ```\n\n#### Examples of Response\n\n1. { \"statusCode\": 0, \"errorMessage\": \"\"}\n    \n2. { \"statusCode\": 0, \"errorMessage\": \"\"}\n    \n3. { \"statusCode\": 0, \"message\": \"\", \"responseBody\": { \"id\": \"\", \"name\": \"\", \"description\": \"\", \"startDate\": \"\", \"endDate\": \"\" }}"
+					},
+					"response": [
+						{
+							"name": "Error: Campaign Id is mandatory.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 16:49:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"id\": \"Campaign Id is mandatory.\"\n    }\n}"
+						},
+						{
+							"name": "Error: Start date cannot be changed",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"CM20250531GNxZw8YVHL\",\r\n    \"startDate\": \"02/06/2025\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 16:54:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Start date cannot be changed\"\n}"
+						},
+						{
+							"name": "Error : End date must be after start date.",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"CM20250531GNxZw8YVHL\",\r\n    \"endDate\": \"10/05/2025\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:22:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"End date must be after start date.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"CM20250531GNxZw8YVHL\",\r\n    \"name\":\"Hum sath sath hae.\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/update",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 17:28:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Campaign update successfully\",\n    \"responseBody\": {\n        \"id\": \"CM20250531GNxZw8YVHL\",\n        \"name\": \"Hum sath sath hae.\",\n        \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\n        \"startDate\": \"01/06/2025\",\n        \"endDate\": \"22/06/2025\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPg",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"campaign",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "CM2025060145IWOcUuPg"
+								}
+							]
+						},
+						"description": "This endpoint sends an HTTP DELETE request to delete a campaign with the specified campaignId.\n\n### Response\n\nThe response is in JSON format and has the following schema:\n\n- statusCode (number): The status code of the response.\n    \n- errorMessage (string): Any error message associated with the response.\n    \n\nExample:\n\n``` json\n{\n    \"statusCode\": 0,\n    \"errorMessage\": \"\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Error: Campaign id is incorrect CM2025060145IWOcUuPk",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPk",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "campaignId",
+											"value": "CM2025060145IWOcUuPk"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 06:26:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Campaign id is incorrect CM2025060145IWOcUuPk\"\n}"
+						},
+						{
+							"name": "Error: Required request parameter 'campaignId'",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/delete",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "campaignId",
+											"value": "CM2025060145IWOcUuPk",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 06:27:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Required request parameter 'campaignId' for method parameter type String is not present\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPg",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "campaignId",
+											"value": "CM2025060145IWOcUuPg"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Jun 2025 06:31:47 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Campaign deleted successfully\",\n    \"responseBody\": \"Campaign Deleted Successfully CM2025060145IWOcUuPg\"\n}"
 						}
 					]
 				}
