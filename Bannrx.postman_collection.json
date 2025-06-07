@@ -23,7 +23,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Saurav kr. Jha\",\n    \"phoneNo\": \"9425041105\",\n    \"email\": \"sauravEr@gmail.com\",\n    \"password\": \"bannrx1234\",\n    \"role\": \"ROLE_BDA\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250006,\n            \"ifscCode\": \"ICIC0000269\",\n            \"verificationProcessId\":\"VA20250422wjNcTNvrd\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
+							"raw": "{\n    \"name\": \"Saurav kr. Jha\",\n    \"phoneNo\": \"9425041109\",\n    \"email\": \"sauravE.r@gmail.com\",\n    \"password\": \"bannrx1234\",\n    \"role\": \"ROLE_BDA\",\n    \"addressDtoSet\": [\n       {\n        \"latitude\": 1,\n        \"longitude\": 1,\n        \"addressLine1\": \"somewhere\",\n        \"state\": \"Chattisgarh\",\n        \"city\": \"Raiput\",\n        \"pincode\": \"490042\"\n       } \n    ],\n    \"bankDetailsDtoSet\": [\n        {\n            \"verified\": true,\n            \"accountNo\": 202503250007,\n            \"ifscCode\": \"ICIC0000265\",\n            \"verificationProcessId\":\"VA20250601z2FtVqYema\"\n        }\n    ],\n    \"businessDto\": {\n        \"name\": \"SomeBusinessName\",\n        \"type\": \"RETAIL_AND_GROCERY\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3235,7 +3235,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250003\",\n    \"ifscCode\": \"ICIC0000269\",\n    \"verified\": true\n}",
+							"raw": "{\n    \"id\": \"BD20250419bWQdS7NnDq\",\n    \"accountNo\": \"202503250007\",\n    \"ifscCode\": \"ICIC0000265\",\n    \"verified\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6340,7 +6340,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Hum sath sath hae2\",\r\n    \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\r\n    \"startDate\": \"01/06/2025\",\r\n    \"endDate\": \"10/06/2025\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Now You can Build your own mobile app.\",\r\n    \"description\": \"App is ready in a month, Contect my team for devloping any kind of app.\",\r\n    \"startDate\": \"07/06/2025\",\r\n    \"endDate\": \"11/07/2025\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7788,6 +7788,550 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Campaign deleted successfully\",\n    \"responseBody\": \"Campaign Deleted Successfully CM2025060145IWOcUuPg\"\n}"
+						}
+					]
+				},
+				{
+					"name": "fetchCampaign",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/campaign/all?endDate=19/08/25",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"campaign",
+								"all"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "07/06/25",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Bon",
+									"disabled": true
+								},
+								{
+									"key": "endDate",
+									"value": "19/08/25"
+								}
+							]
+						},
+						"description": "## API Endpoint: Get All Campaigns\n\nThis endpoint retrieves a list of all campaigns available in the system. It provides information about each campaign, including its ID, name, description, start date, and end date.\n\n### Request Method\n\n- **GET**\n    \n\n### Request URL\n\n- `{{local-common-ms}}/v1/api/campaign/all`\n    \n\n### Response Structure\n\nThe response is returned in JSON format and includes the following fields:\n\n- **statusCode**: An integer indicating the status of the request (e.g., 0 for success).\n    \n- **message**: A string that may contain additional information about the request.\n    \n- **responseBody**: An object containing pagination and campaign details:\n    \n    - **perPage**: An integer indicating the number of items per page (default is 0).\n        \n    - **pageNo**: An integer indicating the current page number (default is 0).\n        \n    - **sortBy**: A string indicating the field by which the results are sorted (default is an empty string).\n        \n    - **sortDirection**: A string indicating the direction of the sort (default is an empty string).\n        \n    - **content**: An array of campaign objects, each containing:\n        \n        - **id**: The unique identifier for the campaign.\n            \n        - **name**: The name of the campaign.\n            \n        - **description**: A brief description of the campaign.\n            \n        - **startDate**: The start date of the campaign.\n            \n        - **endDate**: The end date of the campaign.\n            \n    - **count**: An integer indicating the total number of campaigns available.\n        \n\n### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"id\": \"\",\n        \"name\": \"\",\n        \"description\": \"\",\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\nThis endpoint is useful for fetching all campaigns for display or further processing in the application."
+					},
+					"response": [
+						{
+							"name": "success: filterByNameLike",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/all?name=mobile app",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"all"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "mobile app"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jun 2025 07:17:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All campaign is below\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"CM202506073slqvnCBjx\",\n                \"name\": \"Now You can Build your own mobile app.\",\n                \"description\": \"App is ready in a month, Contect my team for devloping any kind of app.\",\n                \"startDate\": \"07/06/2025\",\n                \"endDate\": \"11/07/2025\"\n            }\n        ],\n        \"count\": 1\n    }\n}"
+						},
+						{
+							"name": "success: filterByStartDate",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/all?startDate=08/06/25",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"all"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "08/06/25"
+										},
+										{
+											"key": "name",
+											"value": "now",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jun 2025 07:25:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All campaign is below\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"CM202506077wVtqZkaP8\",\n                \"name\": \"Hum sath sath hae2\",\n                \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\n                \"startDate\": \"08/06/2025\",\n                \"endDate\": \"08/07/2025\"\n            }\n        ],\n        \"count\": 1\n    }\n}"
+						},
+						{
+							"name": "success: filterByEndDate",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/all?endDate=08/07/25",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"all"
+									],
+									"query": [
+										{
+											"key": "endDate",
+											"value": "08/07/25"
+										},
+										{
+											"key": "name",
+											"value": "now",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jun 2025 07:27:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All campaign is below\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"CM202506077wVtqZkaP8\",\n                \"name\": \"Hum sath sath hae2\",\n                \"description\": \"Hum Saath-Saath Hain is a popular Indian family drama film released in 1999, directed by Sooraj R. Barjatya and produced by Rajshri Productions. It's known for its traditional Indian values, emotional storytelling, and portrayal of a large joint family.\",\n                \"startDate\": \"08/06/2025\",\n                \"endDate\": \"08/07/2025\"\n            }\n        ],\n        \"count\": 1\n    }\n}"
+						},
+						{
+							"name": "success: filterByDateRange",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/all?startDate=07/06/25&endDate=19/08/25",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"all"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "07/06/25"
+										},
+										{
+											"key": "name",
+											"value": "now",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "19/08/25"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jun 2025 11:42:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All campaign is below\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"CM20250607UJ9oxyqTWn\",\n                \"name\": \"Independence Week Offer\",\n                \"description\": \"Special discounts on all categories.\",\n                \"startDate\": \"10/08/2025\",\n                \"endDate\": \"19/08/2025\"\n            },\n            {\n                \"id\": \"CM2025060706MwMEUfmS\",\n                \"name\": \"Monsoon Bonanza\",\n                \"description\": \"Win exciting gifts on every purchase.\",\n                \"startDate\": \"10/06/2025\",\n                \"endDate\": \"19/06/2025\"\n            },\n            {\n                \"id\": \"CM20250607I5rvZp2oiM\",\n                \"name\": \"Summer Sale\",\n                \"description\": \"50% off on all electronics.\",\n                \"startDate\": \"08/06/2025\",\n                \"endDate\": \"15/06/2025\"\n            },\n            {\n                \"id\": \"CM20250607f6c1Gy2Am1\",\n                \"name\": \"Now You can Build your own mobile app.\",\n                \"description\": \"App is ready in a month, Contect my team for devloping any kind of app.\",\n                \"startDate\": \"07/06/2025\",\n                \"endDate\": \"11/07/2025\"\n            }\n        ],\n        \"count\": 4\n    }\n}"
+						},
+						{
+							"name": "success: all",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/campaign/all",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"all"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "07/06/25",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "now",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "19/08/25",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Jun 2025 11:43:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All campaign is below\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"CM20250607UJ9oxyqTWn\",\n                \"name\": \"Independence Week Offer\",\n                \"description\": \"Special discounts on all categories.\",\n                \"startDate\": \"10/08/2025\",\n                \"endDate\": \"19/08/2025\"\n            },\n            {\n                \"id\": \"CM2025060706MwMEUfmS\",\n                \"name\": \"Monsoon Bonanza\",\n                \"description\": \"Win exciting gifts on every purchase.\",\n                \"startDate\": \"10/06/2025\",\n                \"endDate\": \"19/06/2025\"\n            },\n            {\n                \"id\": \"CM20250607I5rvZp2oiM\",\n                \"name\": \"Summer Sale\",\n                \"description\": \"50% off on all electronics.\",\n                \"startDate\": \"08/06/2025\",\n                \"endDate\": \"15/06/2025\"\n            },\n            {\n                \"id\": \"CM20250607f6c1Gy2Am1\",\n                \"name\": \"Now You can Build your own mobile app.\",\n                \"description\": \"App is ready in a month, Contect my team for devloping any kind of app.\",\n                \"startDate\": \"07/06/2025\",\n                \"endDate\": \"11/07/2025\"\n            }\n        ],\n        \"count\": 4\n    }\n}"
 						}
 					]
 				}
