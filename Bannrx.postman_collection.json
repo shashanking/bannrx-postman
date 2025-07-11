@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "b2dd2bf8-722d-474b-b1d4-88dffb6d2df0",
+		"_postman_id": "ce17897e-eb5e-48ab-9477-34b7b0e2ddb2",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "31364017",
-		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-b2dd2bf8-722d-474b-b1d4-88dffb6d2df0?action=share&source=collection_link&creator=31364017"
+		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-ce17897e-eb5e-48ab-9477-34b7b0e2ddb2?action=share&source=collection_link&creator=31364017"
 	},
 	"item": [
 		{
@@ -3555,7 +3555,10 @@
 					"name": "update",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				}
@@ -3567,6 +3570,16 @@
 				{
 					"name": "register",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -3577,7 +3590,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dimension\": {\r\n    \"length\": 12.5,\r\n    \"breadth\": 9.2,\r\n    \"unit\": \"cm\"\r\n  },\r\n  \"isFrontCameraAvailable\": false,\r\n  \"isBackCameraAvailable\": true,\r\n  \"isWorking\": false,\r\n  \"active\": true,\r\n  \"remarks\": \"New device with Back Camera Only and aslo device is not Working condition.\"\r\n}",
+							"raw": "{\r\n  \"dimension\": {\r\n    \"length\": 9.1,\r\n    \"breadth\": 6.5,\r\n    \"unit\": \"cm\"\r\n  },\r\n  \"isFrontCameraAvailable\": false,\r\n  \"isBackCameraAvailable\": true,\r\n  \"isWorking\": false,\r\n  \"active\": true,\r\n  \"remarks\": \"New device with Back Camera Only and aslo device is not Working condition.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5754,6 +5767,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -5763,7 +5786,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{local-common-ms}}/v1/api/device/all?length=10&lengthOperator=GREATERTHAN ",
+							"raw": "{{local-common-ms}}/v1/api/device/all?length=6.5&lengthOperator=GREATERTHAN ",
 							"host": [
 								"{{local-common-ms}}"
 							],
@@ -5796,7 +5819,7 @@
 								},
 								{
 									"key": "length",
-									"value": "10"
+									"value": "6.5"
 								},
 								{
 									"key": "lengthOperator",
@@ -6268,6 +6291,350 @@
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All Device Fetched Successfully.\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"DE202505101IKLAFwkMA\",\n                \"dimension\": {\n                    \"length\": 10.5,\n                    \"breadth\": 7.2,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": true,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with both camera.\"\n            },\n            {\n                \"id\": \"DE20250510JxjyXsTnVh\",\n                \"dimension\": {\n                    \"length\": 10,\n                    \"breadth\": 7.2,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": true,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with both camera.\"\n            },\n            {\n                \"id\": \"DE20250510deA31irKKC\",\n                \"dimension\": {\n                    \"length\": 10,\n                    \"breadth\": 11,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": true,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with both camera.\"\n            },\n            {\n                \"id\": \"DE20250517XZ6IeBpVlt\",\n                \"dimension\": {\n                    \"length\": 10.5,\n                    \"breadth\": 7.2,\n                    \"unit\": \"CM\"\n                },\n                \"isFrontCameraAvailable\": true,\n                \"isBackCameraAvailable\": false,\n                \"isWorking\": true,\n                \"active\": true,\n                \"remarks\": \"New device with Front Camera Only But Working.\"\n            }\n        ],\n        \"count\": 4\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "searchDimension",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/device/search/dimension?unit=CM",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"device",
+								"search",
+								"dimension"
+							],
+							"query": [
+								{
+									"key": "length",
+									"value": "8.9",
+									"disabled": true
+								},
+								{
+									"key": "breadth",
+									"value": "6.5",
+									"disabled": true
+								},
+								{
+									"key": "unit",
+									"value": "CM"
+								}
+							]
+						},
+						"description": "## API Endpoint: Search Device Dimensions\n\nThis endpoint allows users to search for device dimensions based on a specified unit of measurement. The request is made using an HTTP GET method and requires a query parameter to define the unit.\n\n### Request Parameters\n\n- **unit** (query parameter, required): The unit of measurement for the dimensions. In this case, it is specified as `CM` (centimeters).\n    \n\n### Response Structure\n\nUpon a successful request, the API will return a JSON response with the following structure:\n\n- **statusCode** (integer): Indicates the status of the request. A value of `0` typically signifies a successful operation.\n    \n- **message** (string): A message providing additional context about the request. This may be empty.\n    \n- **responseBody** (object): Contains the details of the response, including:\n    \n    - **perPage** (integer): The number of items to be displayed per page.\n        \n    - **pageNo** (integer): The current page number of the results.\n        \n    - **sortBy** (string): The field by which the results are sorted.\n        \n    - **sortDirection** (string): The direction of sorting (e.g., ascending or descending).\n        \n    - **content** (array): An array of objects representing the dimensions of devices, where each object contains:\n        \n        - **length** (integer): The length of the device.\n            \n        - **breadth** (integer): The breadth of the device.\n            \n        - **unit** (string): The unit of measurement for the dimensions.\n            \n    - **count** (integer): The total number of items available based on the search criteria.\n        \n\n### Example Response\n\nHere is an example of a typical response you might receive:\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"perPage\": 0,\n    \"pageNo\": 0,\n    \"sortBy\": \"\",\n    \"sortDirection\": \"\",\n    \"content\": [\n      {\n        \"length\": 0,\n        \"breadth\": 0,\n        \"unit\": \"\"\n      }\n    ],\n    \"count\": 0\n  }\n}\n\n ```\n\n### Notes\n\n- Ensure that the `unit` parameter is correctly specified to receive accurate dimension data.\n    \n- The response may include empty values for dimensions if no matching devices are found."
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/search/dimension?unit=CM",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"search",
+										"dimension"
+									],
+									"query": [
+										{
+											"key": "length",
+											"value": "16",
+											"disabled": true
+										},
+										{
+											"key": "breadth",
+											"value": "12",
+											"disabled": true
+										},
+										{
+											"key": "unit",
+											"value": "CM"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Jul 2025 01:35:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Dimension Search Successful\",\n    \"responseBody\": {\n        \"perPage\": 20,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"length\": 10,\n                \"breadth\": 10,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 15,\n                \"breadth\": null,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 15,\n                \"breadth\": 10,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 16,\n                \"breadth\": 12,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 10,\n                \"breadth\": 12,\n                \"unit\": \"CM\"\n            }\n        ],\n        \"count\": 5\n    }\n}"
+						},
+						{
+							"name": "successFilterByAllCreteria",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/search/dimension?length=16&breadth=12&unit=CM",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"search",
+										"dimension"
+									],
+									"query": [
+										{
+											"key": "length",
+											"value": "16"
+										},
+										{
+											"key": "breadth",
+											"value": "12"
+										},
+										{
+											"key": "unit",
+											"value": "CM"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Jul 2025 01:37:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Dimension Search Successful\",\n    \"responseBody\": {\n        \"perPage\": 20,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"length\": 16,\n                \"breadth\": 12,\n                \"unit\": \"CM\"\n            }\n        ],\n        \"count\": 1\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/search/dimension?unit=CM",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"search",
+										"dimension"
+									],
+									"query": [
+										{
+											"key": "length",
+											"value": "8.9",
+											"disabled": true
+										},
+										{
+											"key": "breadth",
+											"value": "6.5",
+											"disabled": true
+										},
+										{
+											"key": "unit",
+											"value": "CM"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Jul 2025 15:15:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Dimension Search Successful\",\n    \"responseBody\": {\n        \"perPage\": 20,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"length\": 12.5,\n                \"breadth\": 10.5,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 9.8,\n                \"breadth\": 10.5,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 10,\n                \"breadth\": 10.5,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 10,\n                \"breadth\": 8.5,\n                \"unit\": \"CM\"\n            },\n            {\n                \"length\": 9.1,\n                \"breadth\": 6.5,\n                \"unit\": \"CM\"\n            }\n        ],\n        \"count\": 5\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -6340,7 +6707,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Now You can Build your own mobile app.\",\r\n    \"description\": \"App is ready in a month, Contect my team for devloping any kind of app.\",\r\n    \"startDate\": \"07/06/2025\",\r\n    \"endDate\": \"11/07/2025\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Make Maggi withoit any masala and test delicisus food.\",\r\n    \"description\": \"now you can make a maggi in two minute and rest time enjoy with family.\",\r\n    \"startDate\": \"11/06/2025\",\r\n    \"endDate\": \"30/07/2025\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7066,7 +7433,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"CM20250531GNxZw8YVHL\",\r\n    \"name\":\"Hum sath sath hae.\"\r\n    \r\n}",
+							"raw": "{\r\n    \"id\": \"CM20250608XaRY6HNWar\",\r\n    \"name\":\"Make Maggi without any masala and test delicisus food.\"\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7803,7 +8170,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{local-common-ms}}/v1/api/campaign/all?endDate=19/08/25",
+							"raw": "{{local-common-ms}}/v1/api/campaign/all",
 							"host": [
 								"{{local-common-ms}}"
 							],
@@ -7826,7 +8193,8 @@
 								},
 								{
 									"key": "endDate",
-									"value": "19/08/25"
+									"value": "19/08/25",
+									"disabled": true
 								}
 							]
 						},
