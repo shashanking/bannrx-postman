@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "ce17897e-eb5e-48ab-9477-34b7b0e2ddb2",
+		"_postman_id": "bd8f4f8e-49d7-4272-bfb9-938cfa1aa9e8",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "31364017",
-		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-ce17897e-eb5e-48ab-9477-34b7b0e2ddb2?action=share&source=collection_link&creator=31364017"
+		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-bd8f4f8e-49d7-4272-bfb9-938cfa1aa9e8?action=share&source=collection_link&creator=31364017"
 	},
 	"item": [
 		{
@@ -3215,6 +3215,49 @@
 							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"id\": \"Address Id is mandatory\"\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "deleteUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{current-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dimension\": {\r\n    \"length\": 9.1,\r\n    \"breadth\": 6.5,\r\n    \"unit\": \"cm\"\r\n  },\r\n  \"isFrontCameraAvailable\": false,\r\n  \"isBackCameraAvailable\": true,\r\n  \"isWorking\": false,\r\n  \"active\": true,\r\n  \"remarks\": \"New device with Back Camera Only and aslo device is not Working condition.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/userProfile/delete/UR20250726aZSDz5DLnJ",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"userProfile",
+								"delete",
+								"UR20250726aZSDz5DLnJ"
+							]
+						},
+						"description": "## Delete User Profile\n\nThis endpoint allows you to delete a user profile based on a specified user ID. The request is made to the URL `{{local-common-ms}}/v1/api/user/userProfile/delete/{userId}`, where `{userId}` is the unique identifier of the user profile you wish to delete.\n\n### Cautionary Note\n\n**Use this API with caution. When you hit this API, it may affect userProfile, bankDetails, business, device, and address will be deleted.**\n\nThis endpoint allows you to delete a user profile based on a specified user ID.\n\n### Request Method\n\n`DELETE`\n\n### Endpoint\n\n`{{local-common-ms}}/v1/api/user/userProfile/delete/{userId}`\n\n### Parameters\n\n- **userId** (path parameter): The unique identifier of the user profile you wish to delete. In this case, the example user ID is `UR20250726aZSDz5DLnJ`.\n    \n\n### Expected Response Format\n\nUpon successful deletion, the response will typically include a success message and the status of the operation. The exact format may vary based on the implementation but is generally returned in JSON format.\n\nEnsure that the user ID provided is valid and corresponds to an existing user profile to avoid errors during the deletion process."
+					},
+					"response": []
 				}
 			],
 			"description": "API that users can user."
