@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "bd8f4f8e-49d7-4272-bfb9-938cfa1aa9e8",
+		"_postman_id": "7530d426-cf5d-47a4-bcfc-5b14e126bcb3",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "31364017",
-		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-bd8f4f8e-49d7-4272-bfb9-938cfa1aa9e8?action=share&source=collection_link&creator=31364017"
+		"_exporter_id": "10551797"
 	},
 	"item": [
 		{
@@ -53,7 +52,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text",
 										"disabled": true
 									}
@@ -774,15 +773,17 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/bda/user",
+									"raw": "http://localhost:8801/v1/api/user/bda/user",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1036,10 +1037,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/bda/create",
+									"raw": "http://localhost:8801/v1/api/user/bda/create",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1127,7 +1130,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"9999999999\",\n    \"password\": \"manoj1234\"\n}",
+							"raw": "{\n    \"username\": \"9425041106\",\n    \"password\": \"bannrx1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1164,10 +1167,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/login",
+									"raw": "http://localhost:8801/v1/api/user/login",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1463,7 +1468,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
@@ -1477,10 +1482,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
+									"raw": "http://localhost:8801/v1/api/user/update/basic-details",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1991,7 +1998,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
@@ -2005,10 +2012,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
+									"raw": "http://localhost:8801/v1/api/user/update/bank-details",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -2608,7 +2617,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
@@ -2622,10 +2631,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/user/update/business-details",
+									"raw": "http://localhost:8801/v1/api/user/update/business-details",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -2934,7 +2945,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
@@ -2948,10 +2959,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/address/update",
+									"raw": "http://localhost:8801/v1/api/address/update",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -5895,15 +5908,17 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/device/all",
+									"raw": "http://localhost:8801/v1/api/device/all",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -6388,10 +6403,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/device/search/dimension?unit=CM",
+									"raw": "http://localhost:8801/v1/api/device/search/dimension?unit=CM",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -6779,7 +6796,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
@@ -6793,10 +6810,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/campaign/register",
+									"raw": "http://localhost:8801/v1/api/campaign/register",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -7505,7 +7524,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
@@ -7519,10 +7538,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/campaign/update",
+									"raw": "http://localhost:8801/v1/api/campaign/update",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -7923,15 +7944,17 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPk",
+									"raw": "http://localhost:8801/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPk",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -8251,15 +8274,17 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{current-token}}",
+										"value": "Bearer token",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{local-common-ms}}/v1/api/campaign/all?name=mobile app",
+									"raw": "http://localhost:8801/v1/api/campaign/all?name=mobile app",
+									"protocol": "http",
 									"host": [
-										"{{local-common-ms}}"
+										"localhost"
 									],
+									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -8743,10 +8768,377 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All campaign is below\",\n    \"responseBody\": {\n        \"perPage\": 99999,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"CM20250607UJ9oxyqTWn\",\n                \"name\": \"Independence Week Offer\",\n                \"description\": \"Special discounts on all categories.\",\n                \"startDate\": \"10/08/2025\",\n                \"endDate\": \"19/08/2025\"\n            },\n            {\n                \"id\": \"CM2025060706MwMEUfmS\",\n                \"name\": \"Monsoon Bonanza\",\n                \"description\": \"Win exciting gifts on every purchase.\",\n                \"startDate\": \"10/06/2025\",\n                \"endDate\": \"19/06/2025\"\n            },\n            {\n                \"id\": \"CM20250607I5rvZp2oiM\",\n                \"name\": \"Summer Sale\",\n                \"description\": \"50% off on all electronics.\",\n                \"startDate\": \"08/06/2025\",\n                \"endDate\": \"15/06/2025\"\n            },\n            {\n                \"id\": \"CM20250607f6c1Gy2Am1\",\n                \"name\": \"Now You can Build your own mobile app.\",\n                \"description\": \"App is ready in a month, Contect my team for devloping any kind of app.\",\n                \"startDate\": \"07/06/2025\",\n                \"endDate\": \"11/07/2025\"\n            }\n        ],\n        \"count\": 4\n    }\n}"
+						},
+						{
+							"name": "Error: Access Denied",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{current-token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local-campaign-ms}}/v1/api/campaign/all",
+									"host": [
+										"{{local-campaign-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"campaign",
+										"all"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "07/06/25",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Bon",
+											"disabled": true
+										},
+										{
+											"key": "endDate",
+											"value": "19/08/25",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 23:06:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"errorMessage\": \"Access Denied\"\n}"
 						}
 					]
 				}
-			]
+			],
+			"description": "Please Note only users with role ADMIN and CAMPAIGNER can access the below APIs."
+		},
+		{
+			"name": "Document",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{current-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "POST",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/ritik/Downloads/Interview with Round 1 BigBasket.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local-campaign-ms}}/v1/document/",
+							"host": [
+								"{{local-campaign-ms}}"
+							],
+							"path": [
+								"v1",
+								"document",
+								""
+							]
+						},
+						"description": "## API Endpoint: Create Document\n\n### Method\n\n`POST`\n\n### Endpoint\n\n`{{local-campaign-ms}}/v1/document/`\n\n### Description\n\nThis endpoint allows users to upload a document. The request must include the necessary form-data parameters to specify the document type and the file to be uploaded.\n\n### Request Parameters\n\n- **type** (string): The type of the document being uploaded. This is a required parameter.\n    \n- **file** (file): The actual document file to be uploaded. This is also a required parameter.\n    \n\n### Response Format\n\nUpon a successful request, the API will return a JSON response containing the following fields:\n\n- **statusCode** (integer): The status code of the response.\n    \n- **message** (string): A message providing additional information about the request.\n    \n- **responseBody** (object): An object containing details about the uploaded document:\n    \n    - **id** (string): The unique identifier for the document.\n        \n    - **fileName** (string): The name of the uploaded file.\n        \n    - **type** (string): The type of the uploaded document.\n        \n    - **status** (string): The current status of the document.\n        \n    - **url** (string): The URL where the uploaded document can be accessed.\n        \n    - **mimeType** (string): The MIME type of the uploaded document.\n        \n    - **createdAt** (string): Timestamp indicating when the document was created.\n        \n    - **modifiedAt** (string): Timestamp indicating when the document was last modified.\n        \n\n### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"id\": \"\",\n    \"fileName\": \"\",\n    \"type\": \"\",\n    \"status\": \"\",\n    \"url\": \"\",\n    \"mimeType\": \"\",\n    \"createdAt\": \"\",\n    \"modifiedAt\": \"\"\n  }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Error: Mandatory fields missing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "POST",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8802/v1/document/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Aug 2025 07:46:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"file\": \"Please attach file/document/image/video to upload\",\n        \"type\": \"Type is mandatory.\"\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "POST",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/ritik/Downloads/Interview with Round 1 BigBasket.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8802/v1/document/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Aug 2025 08:01:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Document Uploaded Successfully\",\n    \"responseBody\": {\n        \"id\": \"DOC202508031d1kEaJdWr\",\n        \"fileName\": \"Interview with Round 1 BigBasket.pdf\",\n        \"type\": \"POST\",\n        \"status\": \"UPLOADED\",\n        \"url\": \"http://localhost:8803//UR2025072015I6ZdaDKk/post/Interview with Round 1 BigBasket.pdf\",\n        \"mimeType\": \"application/pdf\",\n        \"createdAt\": \"8/3/25, 1:31 PM\",\n        \"modifiedAt\": \"8/3/25, 1:31 PM\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "All the APIs related to the document. All roles are allowed as long as it's a logged in user."
 		}
 	],
 	"variable": [
