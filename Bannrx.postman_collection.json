@@ -52,7 +52,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text",
 										"disabled": true
 									}
@@ -773,17 +773,15 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/bda/user",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/user/bda/user",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1037,12 +1035,10 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/bda/create",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/user/bda/create",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1167,12 +1163,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/login",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/user/login",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1468,7 +1462,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
@@ -1482,12 +1476,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/update/basic-details",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/user/update/basic-details",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -1998,7 +1990,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
@@ -2012,12 +2004,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/update/bank-details",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/user/update/bank-details",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -2617,7 +2607,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
@@ -2631,12 +2621,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/user/update/business-details",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/user/update/business-details",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -2945,7 +2933,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
@@ -2959,12 +2947,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/address/update",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/address/update",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -5908,17 +5894,15 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8801/v1/api/device/all",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/device/all",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -6403,12 +6387,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8801/v1/api/device/search/dimension?unit=CM",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/device/search/dimension?unit=CM",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -6796,7 +6778,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
@@ -6810,12 +6792,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/campaign/register",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/campaign/register",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -7524,7 +7504,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
@@ -7538,12 +7518,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8801/v1/api/campaign/update",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/campaign/update",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -7944,17 +7922,15 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8801/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPk",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/campaign/delete?campaignId=CM2025060145IWOcUuPk",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -8274,17 +8250,15 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer token",
+										"value": "Bearer {{current-token}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8801/v1/api/campaign/all?name=mobile app",
-									"protocol": "http",
+									"raw": "{{local-common-ms}}/v1/api/campaign/all?name=mobile app",
 									"host": [
-										"localhost"
+										"{{local-common-ms}}"
 									],
-									"port": "8801",
 									"path": [
 										"v1",
 										"api",
@@ -8915,7 +8889,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/ritik/Downloads/Interview with Round 1 BigBasket.pdf"
+									"src": "/Users/ritik/Downloads/pinterest/be41bf8de8b24724f0833ee0d4abeea7.jpg"
 								}
 							]
 						},
@@ -8957,12 +8931,10 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:8802/v1/document/",
-									"protocol": "http",
+									"raw": "{{local-campaign-ms}}/v1/document/",
 									"host": [
-										"localhost"
+										"{{local-campaign-ms}}"
 									],
-									"port": "8802",
 									"path": [
 										"v1",
 										"document",
@@ -9058,12 +9030,10 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:8802/v1/document/",
-									"protocol": "http",
+									"raw": "{{local-campaign-ms}}/v1/document/",
 									"host": [
-										"localhost"
+										"{{local-campaign-ms}}"
 									],
-									"port": "8802",
 									"path": [
 										"v1",
 										"document",
@@ -9134,6 +9104,1390 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Document Uploaded Successfully\",\n    \"responseBody\": {\n        \"id\": \"DOC202508031d1kEaJdWr\",\n        \"fileName\": \"Interview with Round 1 BigBasket.pdf\",\n        \"type\": \"POST\",\n        \"status\": \"UPLOADED\",\n        \"url\": \"http://localhost:8803//UR2025072015I6ZdaDKk/post/Interview with Round 1 BigBasket.pdf\",\n        \"mimeType\": \"application/pdf\",\n        \"createdAt\": \"8/3/25, 1:31 PM\",\n        \"modifiedAt\": \"8/3/25, 1:31 PM\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Fetch Pre-signed url",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{current-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8802/v1/document/pre-signed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8802",
+							"path": [
+								"v1",
+								"document",
+								"pre-signed"
+							],
+							"query": [
+								{
+									"key": "doc_id",
+									"value": "DOC20250812sBEOqMXIk",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/pre-signed?doc_id=DOC20250812sBEOqMXIk",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"pre-signed"
+									],
+									"query": [
+										{
+											"key": "doc_id",
+											"value": "DOC20250812sBEOqMXIk"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:39:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Pre-Signed Url\",\n    \"responseBody\": \"http://localhost:8803/one/UR2025072015I6ZdaDKk/post/RK_Resume%202.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250816T053957Z&X-Amz-SignedHeaders=host&X-Amz-Credential=bannrx%2F20250816%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Expires=30&X-Amz-Signature=9202b07c0560368909186ea216b3478d579db68a2b9a0d2e1990f951192a0a1f\"\n}"
+						},
+						{
+							"name": "Error: Invalid document id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/pre-signed?doc_id=DOC20250812sBEOqMXIk",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"pre-signed"
+									],
+									"query": [
+										{
+											"key": "doc_id",
+											"value": "DOC20250812sBEOqMXIk"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:41:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Document not found with id DOC20250812sBEOqMXIk\"\n}"
+						},
+						{
+							"name": "Error: Doc_id not provided",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/pre-signed",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"pre-signed"
+									],
+									"query": [
+										{
+											"key": "doc_id",
+											"value": "DOC20250812sBEOqMXIk",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:41:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Required request parameter 'doc_id' for method parameter type String is not present\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hard Delete Document",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8802/v1/document/hard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8802",
+							"path": [
+								"v1",
+								"document",
+								"hard"
+							],
+							"query": [
+								{
+									"key": "doc_ids",
+									"value": "DOC202508",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API is used to delete set of documents from database and object db."
+					},
+					"response": [
+						{
+							"name": "Error: Missing required fields",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/hard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"hard"
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:47:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Required request parameter 'doc_ids' for method parameter type Set is not present\"\n}"
+						},
+						{
+							"name": "Error: No valid document id found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/hard?doc_ids=DOC202508",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"hard"
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:48:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Documents not founds\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/hard?doc_ids=DOC202508, DOC20250816EzgpPXvFbp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"hard"
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508, DOC20250816EzgpPXvFbp"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:58:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully processed the request.\",\n    \"responseBody\": {\n        \"success\": [\n            \"DOC20250816EzgpPXvFbp\"\n        ],\n        \"failed\": [\n            {\n                \"id\": \"DOC202508\",\n                \"reason\": \"Document not found.\"\n            }\n        ],\n        \"failedCount\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Document",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8802/v1/document/?doc_ids=DOC202508, DOC20250816idhBCOHefU",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8802",
+							"path": [
+								"v1",
+								"document",
+								""
+							],
+							"query": [
+								{
+									"key": "doc_ids",
+									"value": "DOC202508, DOC20250816idhBCOHefU"
+								}
+							]
+						},
+						"description": "This API soft deletes the document or marks the document as deleted. This is equivalent to moving to trash folder. Later we can have clean up cron to delete all the documents post configured time period."
+					},
+					"response": [
+						{
+							"name": "Error: Missing required fields",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/hard",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"hard"
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:47:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Required request parameter 'doc_ids' for method parameter type Set is not present\"\n}"
+						},
+						{
+							"name": "Error: No valid document id found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/hard?doc_ids=DOC202508",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"hard"
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:48:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Documents not founds\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/hard?doc_ids=DOC202508, DOC20250816EzgpPXvFbp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										"hard"
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508, DOC20250816EzgpPXvFbp"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 05:58:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully processed the request.\",\n    \"responseBody\": {\n        \"success\": [\n            \"DOC20250816EzgpPXvFbp\"\n        ],\n        \"failed\": [\n            {\n                \"id\": \"DOC202508\",\n                \"reason\": \"Document not found.\"\n            }\n        ],\n        \"failedCount\": 1\n    }\n}"
+						},
+						{
+							"name": "Error: missing required fields",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										""
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 07:27:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"Required request parameter 'doc_ids' for method parameter type Set is not present\"\n}"
+						},
+						{
+							"name": "Success: Some failed Documents",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/?doc_ids=DOC202508",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										""
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 07:28:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully processed the request.\",\n    \"responseBody\": {\n        \"failed\": [\n            {\n                \"id\": \"DOC202508\",\n                \"reason\": \"Document not found with id DOC202508\"\n            }\n        ],\n        \"failedCount\": 1\n    }\n}"
+						},
+						{
+							"name": "Success: Some success and some failed",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNzIwMTVJNlpkYURLayIsImlhdCI6MTc1MzUzNTQzOCwiZXhwIjoxNzg1MDcxMzM4fQ.AOiubCVR3zTn850UF6AtId6eGlKTtBWFIz6eMgfs38s"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8802/v1/document/?doc_ids=DOC202508, DOC20250816idhBCOHefU",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8802",
+									"path": [
+										"v1",
+										"document",
+										""
+									],
+									"query": [
+										{
+											"key": "doc_ids",
+											"value": "DOC202508, DOC20250816idhBCOHefU"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 07:29:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully processed the request.\",\n    \"responseBody\": {\n        \"success\": [\n            \"DOC20250816idhBCOHefU\"\n        ],\n        \"failed\": [\n            {\n                \"id\": \"DOC202508\",\n                \"reason\": \"Document not found with id DOC202508\"\n            }\n        ],\n        \"failedCount\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Documents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{current-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local-campaign-ms}}/v1/document/",
+							"host": [
+								"{{local-campaign-ms}}"
+							],
+							"path": [
+								"v1",
+								"document",
+								""
+							],
+							"query": [
+								{
+									"key": "mimeType",
+									"value": "jpeg",
+									"disabled": true
+								},
+								{
+									"key": "filename",
+									"value": "rk",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "OTHERS",
+									"disabled": true
+								},
+								{
+									"key": "statuses",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local-campaign-ms}}/v1/document/",
+									"host": [
+										"{{local-campaign-ms}}"
+									],
+									"path": [
+										"v1",
+										"document",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 Aug 2025 06:07:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Documents list\",\n    \"responseBody\": {\n        \"perPage\": 20,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"DOC20250812sBEOqMXIk9\",\n                \"fileName\": \"RK_Resume 2.pdf\",\n                \"type\": \"POST\",\n                \"status\": \"UPLOADED\",\n                \"url\": \"http://localhost:8803/UR2025072015I6ZdaDKk/post/RK_Resume 2.pdf\",\n                \"mimeType\": \"application/pdf\",\n                \"createdAt\": \"8/12/25, 1:04 PM\",\n                \"modifiedAt\": \"8/12/25, 1:04 PM\"\n            }\n        ],\n        \"count\": 1\n    }\n}"
 						}
 					]
 				}
