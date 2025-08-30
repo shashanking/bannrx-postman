@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "7530d426-cf5d-47a4-bcfc-5b14e126bcb3",
+		"_postman_id": "4999cd66-6c46-47c7-a1ae-23dc2309336b",
 		"name": "Bannrx",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "10551797"
+		"_exporter_id": "31364017",
+		"_collection_link": "https://bannerx.postman.co/workspace/Bannerx~9991ad51-05f1-4df8-a0bc-b3867d282826/collection/31364017-4999cd66-6c46-47c7-a1ae-23dc2309336b?action=share&source=collection_link&creator=31364017"
 	},
 	"item": [
 		{
@@ -1126,7 +1127,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"9425041106\",\n    \"password\": \"bannrx1234\"\n}",
+							"raw": "{\n    \"username\": \"9999999999\",\n    \"password\": \"bannrx1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1432,7 +1433,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"password\": \"manoj123\"\n}",
+							"raw": "{\n    \"password\": \"bannrx1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3257,6 +3258,574 @@
 						"description": "## Delete User Profile\n\nThis endpoint allows you to delete a user profile based on a specified user ID. The request is made to the URL `{{local-common-ms}}/v1/api/user/userProfile/delete/{userId}`, where `{userId}` is the unique identifier of the user profile you wish to delete.\n\n### Cautionary Note\n\n**Use this API with caution. When you hit this API, it may affect userProfile, bankDetails, business, device, and address will be deleted.**\n\nThis endpoint allows you to delete a user profile based on a specified user ID.\n\n### Request Method\n\n`DELETE`\n\n### Endpoint\n\n`{{local-common-ms}}/v1/api/user/userProfile/delete/{userId}`\n\n### Parameters\n\n- **userId** (path parameter): The unique identifier of the user profile you wish to delete. In this case, the example user ID is `UR20250726aZSDz5DLnJ`.\n    \n\n### Expected Response Format\n\nUpon successful deletion, the response will typically include a success message and the status of the operation. The exact format may vary based on the implementation but is generally returned in JSON format.\n\nEnsure that the user ID provided is valid and corresponds to an existing user profile to avoid errors during the deletion process."
 					},
 					"response": []
+				},
+				{
+					"name": "mapDevice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/device/map-device?deviceId=DE20250823GSBJiTXDng",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"device",
+								"map-device"
+							],
+							"query": [
+								{
+									"key": "deviceId",
+									"value": "DE20250823GSBJiTXDng"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "error: InvalidDeviceId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"9999999999\",\n    \"password\": \"bannrx1234\"\n}"
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/map-device?deviceId=DE20250823JGJF4vgG",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"map-device"
+									],
+									"query": [
+										{
+											"key": "deviceId",
+											"value": "DE20250823JGJF4vgG"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:10:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Invalid device id DE20250823JGJF4vgGy.\"\n}"
+						},
+						{
+							"name": "error: Device is already map",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"9999999999\",\n    \"password\": \"bannrx1234\"\n}"
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/map-device?deviceId=DE20250823JGJF4vgGyU",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"map-device"
+									],
+									"query": [
+										{
+											"key": "deviceId",
+											"value": "DE20250823JGJF4vgGyU"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:11:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"This Device is already map\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/device/map-device?deviceId=DE20250823GSBJiTXDng",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"device",
+										"map-device"
+									],
+									"query": [
+										{
+											"key": "deviceId",
+											"value": "DE20250823GSBJiTXDng"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:15:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device Map successfully\",\n    \"responseBody\": \"Device Mapped Successfully with Baap Hun Ma\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/bda/user",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"bda",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success: BasicUserDetails",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/bda/user",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"bda",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Aug 2025 14:07:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User List\",\n    \"responseBody\": {\n        \"perPage\": 20,\n        \"pageNo\": 1,\n        \"sortBy\": \"createdAt\",\n        \"sortDirection\": \"ASC\",\n        \"content\": [\n            {\n                \"id\": \"UR20250720Ej4tiaK2ye\",\n                \"name\": \"Someone Sharma\",\n                \"phoneNo\": \"9425040601\",\n                \"email\": \"sharma@gmail.com\"\n            },\n            {\n                \"id\": \"UR20250720E8gaJskeJF\",\n                \"name\": \"Saurav Jha\",\n                \"phoneNo\": \"9315307748\",\n                \"email\": \"saurav@gmail.com\"\n            },\n            {\n                \"id\": \"UR20250720l19WwZ9Vkd\",\n                \"name\": \"Saurav kr Jha\",\n                \"phoneNo\": \"9315307749\",\n                \"email\": \"sauravkr@gmail.com\"\n            },\n            {\n                \"id\": \"UR20250720wEDv58Gw8I\",\n                \"name\": \"Saurav kr. Jha\",\n                \"phoneNo\": \"9425041109\",\n                \"email\": \"sauravE.r@gmail.com\"\n            },\n            {\n                \"id\": \"UR2025072015I6ZdaDKk\",\n                \"name\": \"Saurav kr. Jha\",\n                \"phoneNo\": \"9425041106\",\n                \"email\": \"sauravSr@gmail.com\"\n            },\n            {\n                \"id\": \"UR20250726ewo6HeJfcp\",\n                \"name\": \"Ritik Agarwal\",\n                \"phoneNo\": \"9425041107\",\n                \"email\": \"ritik@gmail.com\"\n            },\n            {\n                \"id\": \"UR2025072645Y8z1zMHi\",\n                \"name\": \"Saurav Er Jha\",\n                \"phoneNo\": \"9425041108\",\n                \"email\": \"sauraver@gmail.com\"\n            },\n            {\n                \"id\": \"UR20250726aZSDz5DLnJ\",\n                \"name\": \"Gaurav Jha\",\n                \"phoneNo\": \"9425041110\",\n                \"email\": \"gaurav@gmail.com\"\n            }\n        ],\n        \"count\": 8\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "fetchUserProfile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deviceId\": \"DE20250823F7sTBntwqW\",\r\n    \"addressId\": \"AD20250720ZqRCYTKfRT\"\r\n}"
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/user/profile/UR202504191riR76baTL",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"user",
+								"profile",
+								"UR202504191riR76baTL"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823F7sTBntwqW\",\r\n    \"addressId\": \"AD20250720ZqRCYTKfRT\"\r\n}"
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/user/profile/UR202504191riR76baTL",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"user",
+										"profile",
+										"UR202504191riR76baTL"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 28 Aug 2025 16:21:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User Profile Fetch Successfully\",\n    \"responseBody\": {\n        \"id\": \"UR202504191riR76baTL\",\n        \"name\": \"Baap Hun Ma\",\n        \"phoneNo\": \"9999999999\",\n        \"email\": \"baap@gmail.com\",\n        \"addressDtoSet\": [\n            {\n                \"id\": \"AD202508250IW6UfHZTi\",\n                \"addressLine1\": \"Indore at baapat house no 255\",\n                \"addressLine2\": null,\n                \"city\": \"Indoer\",\n                \"state\": \"M.P\",\n                \"pincode\": null,\n                \"latitude\": 1.20126,\n                \"longitude\": 0.86476\n            },\n            {\n                \"id\": \"AD20250825SfJJ9CgWaj\",\n                \"addressLine1\": \"Indore at baapat house no 253\",\n                \"addressLine2\": null,\n                \"city\": \"Indoew\",\n                \"state\": \"M.P\",\n                \"pincode\": null,\n                \"latitude\": 1.20125,\n                \"longitude\": 0.86475\n            }\n        ],\n        \"bankDetailsDtoSet\": null,\n        \"businessDto\": {\n            \"id\": \"BU20250726NkTDx7dXLD\",\n            \"name\": \"SuperMart Grocery\",\n            \"type\": \"RETAIL_AND_GROCERY\"\n        },\n        \"deviceAddressResponseDtoSet\": [\n            {\n                \"deviceDto\": {\n                    \"id\": \"DE20250823F7sTBntwqW\",\n                    \"dimension\": {\n                        \"length\": 9.5,\n                        \"breadth\": 7.5,\n                        \"unit\": \"CM\"\n                    },\n                    \"isFrontCameraAvailable\": true,\n                    \"isBackCameraAvailable\": true,\n                    \"isWorking\": true,\n                    \"active\": true,\n                    \"remarks\": \"New device with front and back Camera and aslo device is Working.\"\n                },\n                \"addressDto\": {\n                    \"id\": \"AD20250720ZqRCYTKfRT\",\n                    \"addressLine1\": \"line 1\",\n                    \"addressLine2\": null,\n                    \"city\": \"Patna\",\n                    \"state\": \"Bihar\",\n                    \"pincode\": \"811470\",\n                    \"latitude\": 1,\n                    \"longitude\": 1\n                },\n                \"status\": \"AVAILABLE\",\n                \"damid\": \"DAM20250825B2kSQhSOcl\"\n            },\n            {\n                \"deviceDto\": {\n                    \"id\": \"DE20250823cZpihFjywD\",\n                    \"dimension\": {\n                        \"length\": 8.5,\n                        \"breadth\": 7.5,\n                        \"unit\": \"CM\"\n                    },\n                    \"isFrontCameraAvailable\": true,\n                    \"isBackCameraAvailable\": true,\n                    \"isWorking\": true,\n                    \"active\": true,\n                    \"remarks\": \"New device with front and back Camera and aslo device is Working.\"\n                },\n                \"status\": \"AVAILABLE\",\n                \"damid\": \"DAM20250825XMfh9Jha9v\"\n            }\n        ]\n    }\n}"
+						}
+					]
 				}
 			],
 			"description": "API that users can user."
@@ -3632,7 +4201,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dimension\": {\r\n    \"length\": 9.1,\r\n    \"breadth\": 6.5,\r\n    \"unit\": \"cm\"\r\n  },\r\n  \"isFrontCameraAvailable\": false,\r\n  \"isBackCameraAvailable\": true,\r\n  \"isWorking\": false,\r\n  \"active\": true,\r\n  \"remarks\": \"New device with Back Camera Only and aslo device is not Working condition.\"\r\n}",
+							"raw": "{\r\n  \"dimension\": {\r\n    \"length\": 11.2,\r\n    \"breadth\": 9.1,\r\n    \"unit\": \"cm\"\r\n  },\r\n  \"isFrontCameraAvailable\": true,\r\n  \"isBackCameraAvailable\": true,\r\n  \"isWorking\": true,\r\n  \"active\": true,\r\n  \"remarks\": \"New device with front and back Camera and aslo device is Working.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -8786,7 +9355,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -8889,7 +9458,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/ritik/Downloads/pinterest/be41bf8de8b24724f0833ee0d4abeea7.jpg"
+									"src": "/C:/Users/saura/Dropbox/My PC (LAPTOP-HAG3EEC7)/Downloads/45104791.jpg"
 								}
 							]
 						},
@@ -8944,7 +9513,7 @@
 							},
 							"status": "Bad Request",
 							"code": 400,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9043,7 +9612,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9128,7 +9697,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8802/v1/document/pre-signed",
+							"raw": "http://localhost:8802/v1/document/pre-signed?doc_id=DOC202508175csKK7CUaE",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -9142,8 +9711,7 @@
 							"query": [
 								{
 									"key": "doc_id",
-									"value": "DOC20250812sBEOqMXIk",
-									"disabled": true
+									"value": "DOC202508175csKK7CUaE"
 								}
 							]
 						}
@@ -9181,7 +9749,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9275,7 +9843,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9370,7 +9938,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9448,7 +10016,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8802/v1/document/hard",
+							"raw": "http://localhost:8802/v1/document/hard?doc_ids=DOC20250817PvrHz9tV7G",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -9462,8 +10030,7 @@
 							"query": [
 								{
 									"key": "doc_ids",
-									"value": "DOC202508",
-									"disabled": true
+									"value": "DOC20250817PvrHz9tV7G"
 								}
 							]
 						},
@@ -9503,7 +10070,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9597,7 +10164,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9691,7 +10258,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9823,7 +10390,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -9917,7 +10484,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -10011,7 +10578,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -10106,7 +10673,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -10200,7 +10767,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -10294,7 +10861,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -10427,7 +10994,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": [
 								{
 									"key": "Vary",
@@ -10493,12 +11060,1377 @@
 				}
 			],
 			"description": "All the APIs related to the document. All roles are allowed as long as it's a logged in user."
+		},
+		{
+			"name": "DeviceAddressMapper",
+			"item": [
+				{
+					"name": "DAMRegister",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deviceId\": \"DE20250823F7sTBntwqW\",\r\n    \"addressId\": \"AD20250720ZqRCYTKfRT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/DAM/add",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"DAM",
+								"add"
+							]
+						},
+						"description": "## Add Device and Address\n\nThis endpoint is used to add a device and its associated address to the system. It accepts a JSON payload containing identifiers for the device and address.\n\n### Request\n\n**HTTP Method:** POST  \n**Endpoint:** `{{local-common-ms}}/v1/api/DAM/add`\n\n#### Request Body\n\nThe request body must be in JSON format and include the following parameters:\n\n- **deviceId** (string): The unique identifier for the device.\n    \n- **addressId** (string): The unique identifier for the address.\n    \n\n**Example Request Body:**\n\n``` json\n{\n  \"deviceId\": \"DE20250822Pp7vZVdrSg\",\n  \"addressId\": \"AD20250720vTDDgV29i4\"\n}\n\n ```\n\n### Response\n\nOn a successful request, the API returns a JSON response with the following structure:\n\n- **statusCode** (integer): Indicates the status of the request (0 for success).\n    \n- **message** (string): A message providing additional information (empty if no message is needed).\n    \n- **responseBody** (object): Contains details about the device and address.\n    \n\n#### Response Body Details\n\n- **deviceDto** (object): Information about the device.\n    \n    - **id** (string): The unique identifier for the device.\n        \n    - **dimension** (object): The dimensions of the device.\n        \n        - **length** (integer): Length of the device.\n            \n        - **breadth** (integer): Breadth of the device.\n            \n        - **unit** (string): Measurement unit for dimensions.\n            \n    - **isFrontCameraAvailable** (boolean): Indicates if the front camera is available.\n        \n    - **isBackCameraAvailable** (boolean): Indicates if the back camera is available.\n        \n    - **isWorking** (boolean): Indicates if the device is operational.\n        \n    - **active** (boolean): Indicates if the device is active.\n        \n    - **remarks** (string): Additional remarks about the device.\n        \n- **addressDto** (object): Information about the address.\n    \n    - **id** (string): The unique identifier for the address.\n        \n    - **addressLine1** (string): The first line of the address.\n        \n    - **addressLine2** (string): The second line of the address (can be null).\n        \n    - **city** (string): The city of the address.\n        \n    - **state** (string): The state of the address.\n        \n    - **pincode** (string): The postal code of the address.\n        \n    - **latitude** (number): Latitude of the address location.\n        \n    - **longitude** (number): Longitude of the address location.\n        \n\n### Notes\n\n- Ensure that the deviceId and addressId provided are valid and correspond to existing entities in the system.\n    \n- The response will include detailed information about the device and address that was added, which can be useful for verification."
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250822Pp7vZVdrSg\",\r\n    \"addressId\": \"AD20250720vTDDgV29i4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 04:06:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device Address Mapper Added successfully\",\n    \"responseBody\": {\n        \"deviceDto\": {\n            \"id\": \"DE20250822Pp7vZVdrSg\",\n            \"dimension\": {\n                \"length\": 9,\n                \"breadth\": 6.5,\n                \"unit\": \"CM\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": true,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with front and back Camera and aslo device is Working.\"\n        },\n        \"addressDto\": {\n            \"id\": \"AD20250720vTDDgV29i4\",\n            \"addressLine1\": \"somewhere\",\n            \"addressLine2\": null,\n            \"city\": \"Raiput\",\n            \"state\": \"Chattisgarh\",\n            \"pincode\": \"490042\",\n            \"latitude\": 1,\n            \"longitude\": 1\n        },\n        \"status\": \"AVAILABLE\",\n        \"damid\": \"DAM20250823KpuSoDTIT6\"\n    }\n}"
+						},
+						{
+							"name": "error: Invalid device id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDn\",\r\n    \"addressId\": \"AD20250720vTDDgV29i4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:18:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Invalid device id DE20250823FYn3U1xDn.\"\n}"
+						},
+						{
+							"name": "error: Invalid address id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDny\",\r\n    \"addressId\": \"AD20250720vTDDgV29i\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:18:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Invalid address id AD20250720vTDDgV29i.\"\n}"
+						},
+						{
+							"name": "error:Address id must not be null or empty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDny\",\r\n    \"addressId\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:21:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"addressId\": \"Address id must not be null or empty\"\n    }\n}"
+						},
+						{
+							"name": "error: device id must not be null or empty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"\",\r\n    \"addressId\": \"asd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:23:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"deviceId\": \"Device id must not be null or empty\"\n    }\n}"
+						},
+						{
+							"name": "error: null or empty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"\",\r\n    \"addressId\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:23:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Bad Request\",\n    \"responseBody\": {\n        \"deviceId\": \"Device id must not be null or empty\",\n        \"addressId\": \"Address id must not be null or empty\"\n    }\n}"
+						},
+						{
+							"name": "error: duplicate entry",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823F7sTBntwqW\",\r\n    \"addressId\": \"AD20250720ZqRCYTKfRT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/add",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"add"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 07:24:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 422,\n    \"errorMessage\": \"could not execute statement [Duplicate entry 'DE20250823FYn3U1xDny' for key 'device_address_mapper.UKterpiwulwur89k1g0797mc6k7'] [insert into device_address_mapper (active,address_id,created_at,created_by,device_id,modified_at,modified_by,status,user_profile_id,id) values (?,?,?,?,?,?,?,?,?,?)]; SQL [insert into device_address_mapper (active,address_id,created_at,created_by,device_id,modified_at,modified_by,status,user_profile_id,id) values (?,?,?,?,?,?,?,?,?,?)]; constraint [device_address_mapper.UKterpiwulwur89k1g0797mc6k7]\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDny\",\r\n    \"addressId\": \"AD20250720vTDDgV29i4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/DAM/detach?DAMId=DAM20250825XMfh9Jha9v",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"DAM",
+								"detach"
+							],
+							"query": [
+								{
+									"key": "DAMId",
+									"value": "DAM20250825XMfh9Jha9v"
+								}
+							]
+						},
+						"description": "## PATCH /v1/api/DAM/detach\n\nThis endpoint is used to detach a device from a specified Digital Asset Management (DAM) system by providing the device ID and address ID. The request modifies the association of the device with the DAM identified by the `DAMId` query parameter.\n\n### Request Parameters\n\n- **Query Parameter:**\n    \n    - `DAMId` (string): The unique identifier of the DAM from which the device is to be detached.\n        \n- **Request Body:**\n    \n    - `deviceId` (string): The unique identifier of the device that is being detached.\n        \n    - `addressId` (string): The unique identifier of the address associated with the device.\n        \n\n#### Example Request Body\n\n``` json\n{\n  \"deviceId\": \"DE20250823FYn3U1xDny\",\n  \"addressId\": \"AD20250720vTDDgV29i4\"\n}\n\n ```\n\n### Response\n\nUpon a successful request, the API will return a response with a status code of `200`, indicating that the detachment process was successful. The response will include a JSON object with the following structure:\n\n- **statusCode** (integer): Indicates the result of the operation (0 for success).\n    \n- **message** (string): A message providing additional information about the operation (may be empty).\n    \n- **responseBody** (object): Contains details related to the address and the status of the operation.\n    \n    - **addressDto** (object): Information about the address, including:\n        \n        - `id` (string): The unique identifier of the address.\n            \n        - `addressLine1` (string): The first line of the address.\n            \n        - `addressLine2` (string or null): The second line of the address (if applicable).\n            \n        - `city` (string): The city of the address.\n            \n        - `state` (string): The state of the address.\n            \n        - `pincode` (string): The postal code of the address.\n            \n        - `latitude` (number): The latitude coordinate of the address.\n            \n        - `longitude` (number): The longitude coordinate of the address.\n            \n    - **status** (string): The status of the detachment operation.\n        \n    - **damid** (string): The ID of the DAM from which the device was detached.\n        \n\n#### Example Response\n\n``` json\n{\n  \"statusCode\": 0,\n  \"message\": \"\",\n  \"responseBody\": {\n    \"addressDto\": {\n      \"id\": \"\",\n      \"addressLine1\": \"\",\n      \"addressLine2\": null,\n      \"city\": \"\",\n      \"state\": \"\",\n      \"pincode\": \"\",\n      \"latitude\": 0,\n      \"longitude\": 0\n    },\n    \"status\": \"\",\n    \"damid\": \"\"\n  }\n}\n\n ```\n\n### Notes\n\n- Ensure that the `DAMId`, `deviceId`, and `addressId` are valid and exist in the system before making the request.\n    \n- The response may vary based on the state of the device and address in relation to the DAM."
+					},
+					"response": [
+						{
+							"name": "error: no update found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDny\",\r\n    \"addressId\": \"AD20250720vTDDgV29i4\"\r\n}"
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/detach?DAMId=DAM20250823Mj0o1Q1VCs",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"detach"
+									],
+									"query": [
+										{
+											"key": "DAMId",
+											"value": "DAM20250823Mj0o1Q1VCs"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 09:24:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"no update found id DAM20250823Mj0o1Q1VCs.\"\n}"
+						},
+						{
+							"name": "error: Invalid DAM id",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDny\",\r\n    \"addressId\": \"AD20250720vTDDgV29i4\"\r\n}"
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/detach?DAMId=DE20250823FYn3U1xDny",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"detach"
+									],
+									"query": [
+										{
+											"key": "DAMId",
+											"value": "DE20250823FYn3U1xDny"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Aug 2025 09:35:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Invalid DAM id DE20250823FYn3U1xDny.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"deviceId\": \"DE20250823FYn3U1xDny\",\r\n    \"addressId\": \"AD20250720vTDDgV29i4\"\r\n}"
+								},
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/detach?DAMId=DAM20250825XMfh9Jha9v",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"detach"
+									],
+									"query": [
+										{
+											"key": "DAMId",
+											"value": "DAM20250825XMfh9Jha9v"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Aug 2025 15:49:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"DAM update successfully\",\n    \"responseBody\": {\n        \"deviceDto\": {\n            \"id\": \"DE20250823cZpihFjywD\",\n            \"dimension\": {\n                \"length\": 8.5,\n                \"breadth\": 7.5,\n                \"unit\": \"CM\"\n            },\n            \"isFrontCameraAvailable\": true,\n            \"isBackCameraAvailable\": true,\n            \"isWorking\": true,\n            \"active\": true,\n            \"remarks\": \"New device with front and back Camera and aslo device is Working.\"\n        },\n        \"status\": \"AVAILABLE\",\n        \"damid\": \"DAM20250825XMfh9Jha9v\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/DAM/delete?DAMId=DAM20250823Mj0o1Q1VCs",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"DAM",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "DAMId",
+									"value": "DAM20250823Mj0o1Q1VCs"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "error: Invalid DAM id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/delete?DAMId=DAM20250823Mj0o1Q1VC",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "DAMId",
+											"value": "DAM20250823Mj0o1Q1VC"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Aug 2025 10:14:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"errorMessage\": \"Invalid DAM id DAM20250823Mj0o1Q1VC.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/DAM/delete?DAMId=DAM20250823Mj0o1Q1VCs",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"DAM",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "DAMId",
+											"value": "DAM20250823Mj0o1Q1VCs"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Aug 2025 10:15:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Device Address Mapper Deleted Successfully\",\n    \"responseBody\": \"Device Address Mapper Deleted Success\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "fetchAllAddress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/address/all",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"address",
+								"all"
+							]
+						},
+						"description": "### Retrieve All Addresses\n\nThis endpoint retrieves a list of all addresses stored in the system. It is a simple GET request that does not require any parameters.\n\n#### Request\n\n- **Method:** GET\n    \n- **Endpoint:** `{{local-common-ms}}/v1/api/address/all`\n    \n\n#### Response\n\n- **Status Code:** 200\n    \n- **Content-Type:** application/json\n    \n\nThe response will contain the following fields:\n\n- **statusCode**: Indicates the status of the request (0 for success).\n    \n- **message**: A message providing additional context (typically empty on success).\n    \n- **responseBody**: An array of address objects, where each object contains:\n    \n    - **id**: Unique identifier for the address.\n        \n    - **addressLine1**: The primary address line.\n        \n    - **addressLine2**: An optional secondary address line (may be null).\n        \n    - **city**: The city of the address.\n        \n    - **state**: The state of the address.\n        \n    - **pincode**: The postal code (may be null).\n        \n    - **latitude**: The latitude coordinate (default is 0).\n        \n    - **longitude**: The longitude coordinate (default is 0).\n        \n\n#### Notes\n\n- Ensure that the request is made to a valid endpoint.\n    \n- The response body will be an array, which may be empty if no addresses are available.\n    \n- This endpoint is useful for applications that need to display or manage address data."
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local-common-ms}}/v1/api/address/all",
+									"host": [
+										"{{local-common-ms}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"address",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Aug 2025 13:24:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"All Addresses fetched successfully\",\n    \"responseBody\": [\n        {\n            \"id\": \"AD202508250IW6UfHZTi\",\n            \"addressLine1\": \"Indore at baapat house no 255\",\n            \"addressLine2\": null,\n            \"city\": \"Indoer\",\n            \"state\": \"M.P\",\n            \"pincode\": null,\n            \"latitude\": 1.20126,\n            \"longitude\": 0.86476\n        },\n        {\n            \"id\": \"AD20250825SfJJ9CgWaj\",\n            \"addressLine1\": \"Indore at baapat house no 253\",\n            \"addressLine2\": null,\n            \"city\": \"Indoew\",\n            \"state\": \"M.P\",\n            \"pincode\": null,\n            \"latitude\": 1.20125,\n            \"longitude\": 0.86475\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "addAddress",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVUjIwMjUwNDE5MXJpUjc2YmFUTCIsImlhdCI6MTc0NTA0Njg0OCwiZXhwIjoxNzc2NTgyNTg3fQ.D2I0Rgxj2swYoOWacnWk7QHhg6T9avsXmU-CINW0450",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressLine1\": \"Indore at baapat house no 255\",\r\n    \"city\": \"Indoer\",\r\n    \"state\": \"M.P\",\r\n    \"pincode\": \"462022\",\r\n    \"latitude\": 1.20126,\r\n    \"longitude\": 0.86476\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local-common-ms}}/v1/api/address/add",
+							"host": [
+								"{{local-common-ms}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"address",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"variable": [
 		{
 			"key": "local-common-ms",
 			"value": "http://localhost:8801"
+		},
+		{
+			"key": "local-campaign-ms",
+			"value": "http://localhost:8802",
+			"type": "default"
 		}
 	]
 }
